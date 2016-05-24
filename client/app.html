@@ -1,0 +1,86 @@
+<div (click)="$event.preventDefault()">
+  <img src="images/DASH.svg"/>
+
+  <tabset style="position:absolute;top:0px;left:0px;">
+    <tab heading="Map" [active]=true>
+			<tangram-map></tangram-map>
+		</tab> <!--would be empty, to show map-->
+		<tab heading="Data">
+		</tab>
+		<tab heading="Features">
+		</tab>
+		<tab heading="Questions">
+		</tab>
+		<tab heading="Styles">
+		</tab>
+		<tab heading="Users">
+			<login-buttons></login-buttons>
+		</tab>
+  </tabset>
+
+<router-outlet></router-outlet>
+</div>
+
+
+
+
+
+		<!-- <div class="tab" tabTitle="Styles"  csswidthbody="50%" cssheightbody="70%">
+			<h1>Styles tab</h1>
+			<tangramstyles></tangramstyles>
+	  </div>
+	  <div class="tab" tabTitle="Data" csswidthbody="50%" cssheightbody="50%">
+	    <selectdata></selectdata>
+	  </div>
+
+	  <div class="tab" tabTitle="Features" csswidthbody="50%" cssheightbody="50%">
+	    <feature-ctrl></feature-ctrl>
+	  </div>
+
+      <div class="tab" tabTitle="Questions" csswidthbody="80%" cssheightbody="80%">
+			<div class="tabs" colnum="three" menucolor="teal" cssposition="absolute">
+			     <h1>text here makes it </h1>
+			  <div class="tab" tabTitle="Surveys" csswidthbody="80%">
+                  <p>Should include all the existing questions</p>
+                  <p>Need to have ways to connect to map</p>
+			  </div>
+			  <div class="tab" tabTitle="Comments" csswidthbody="50%">
+				  <p>Let's you go through the notes as columns</p>
+			  </div>
+			  <div class="tab" tabTitle="Connections" csswidthbody="50%">
+				  <p>Some mechanism for associating themes that show up in other ways</p>
+                  <p>Could be like a Vwire map</p>
+			  </div>
+		  </div>
+      </div>
+	  <div class="tab" tabTitle="Users" csswidthbody="30%">
+		  <div class="tabs" colnum="three" menucolor="teal" cssposition="absolute">
+			  <p>Not sure how to enforce size</p>
+			  <div class="tab" tabTitle="Login">
+			  	<accounts-ui></accounts-ui>
+			  		<p>Login/logout should be contextual</p>
+			  </div>
+			  <div class="tab" tabTitle="Groups">
+				  <p>do we want search for other users or other functions?</p>
+			  </div>
+			  <div class="tab" tabTitle="Admin">
+				  <p>only for admins</p>
+			  </div>
+		  </div>
+	  </div>
+	</div>
+
+<div class="ui two column doubling stackable container">
+  <div class="column">
+
+	<tangram-map title="Main Map"></tangram-map>
+
+  </div>
+
+  <div class="column">
+	  <h1  class="window-watcher">having problems with router returning to original</h1>
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div> -->
