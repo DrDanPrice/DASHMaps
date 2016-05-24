@@ -10,15 +10,22 @@
     "moduleResolution": "node",
     "isolatedModules": false,
     "noImplicitAny": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true
   },
   "filesGlob": [
     "**/*.ts"
   ],
   "files": [
     "client/app.ts",
+    "client/datadisplay.ts",
+    "client/features.ts",
     "client/main.ts",
-    "client/ts/tangrammaps.ts",
+    "client/questions.ts",
+    "client/styledisplay.ts",
+    "client/tangrammaps.ts",
+    "client/userdisplay.ts",
     "node_modules/@angular/common/esm/index.d.ts",
     "node_modules/@angular/common/esm/src/common_directives.d.ts",
     "node_modules/@angular/common/esm/src/directives.d.ts",

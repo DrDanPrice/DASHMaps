@@ -1,5 +1,5 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
 
 @Component({
   selector: 'tangram-map',
@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 
 //@RequireUser()
-export class TangramMaps {
-
-}
+export class TangramMaps { }

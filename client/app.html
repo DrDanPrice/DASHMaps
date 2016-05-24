@@ -2,18 +2,24 @@
   <img src="images/DASH.svg"/>
 
   <tabset style="position:absolute;top:0px;left:0px;">
-    <tab heading="Map" [active]=true>
+    <tab heading="Map" [active]="true" (click)="onSelect('/map')">
+			<a [routerLink]="['/map']">Map</a>
 			<tangram-map></tangram-map>
 		</tab> <!--would be empty, to show map-->
 		<tab heading="Data">
+			<a  [routerLink]="['/data']">Data</a>
 		</tab>
 		<tab heading="Features">
+			<a  [routerLink]="['/features']">Features</a>
 		</tab>
 		<tab heading="Questions">
+			<a  [routerLink]="['/questions']">Questions</a>
 		</tab>
 		<tab heading="Styles">
+			<a  [routerLink]="['/styles']">Styles</a>
 		</tab>
 		<tab heading="Users">
+			<a  [routerLink]="['/userdisplay']">Users</a>
 			<login-buttons></login-buttons>
 		</tab>
   </tabset>
