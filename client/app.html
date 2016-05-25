@@ -1,10 +1,10 @@
 <div (click)="$event.preventDefault()">
-  <img src="images/DASH.svg"/>
+  <tangram-map></tangram-map>
 
   <tabset style="position:absolute;top:0px;left:0px;">
     <tab heading="Map" [active]="true" (click)="onSelect('/map')">
 			<a [routerLink]="['/map']">Map</a>
-			<tangram-map></tangram-map>
+
 		</tab> <!--would be empty, to show map-->
 		<tab heading="Data">
 			<a  [routerLink]="['/data']">Data</a>

@@ -24,7 +24,8 @@ import { FeatureComponent } from './features.ts';
                 CORE_DIRECTIVES,
                 ROUTER_DIRECTIVES,
                 TAB_DIRECTIVES,
-                LoginButtons
+                LoginButtons,
+                TangramMaps
               ]
 })
 @Routes([
