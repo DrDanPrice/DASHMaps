@@ -1,5 +1,5 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
-import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'user-display',

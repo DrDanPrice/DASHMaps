@@ -36,7 +36,9 @@ import { FeatureComponent } from '../components/features.ts';
     { path: '/userdisplay', component: UserComponent },
     { path: '/styles', component: StyleComponent },
     { path: '/questions', component: QuestionsComponent },
+    //https://angular.io/docs/ts/latest/guide/router.html
     { path: '/features', component: FeatureComponent }
+    //{ path: '/features/:featureID', component: FeatureComponent } // I don't think it needs this, but haven't tested
 ])
 @InjectUser()
 export class DASHMaps extends MeteorComponent implements OnInit {
@@ -67,14 +69,14 @@ constructor(private router: Router) {
     this.status.isopen = !this.status.isopen;
   }
 
-   ngOnInit() {
-     this.router.navigate(['/']);
-   }
-
   logout() {
     this.autorun(() => {
       Meteor.logout();
     });
+  }
+
+  ngOnInit() {
+     this.router.navigate(['/']);
   }
 
 }

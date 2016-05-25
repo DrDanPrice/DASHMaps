@@ -21,6 +21,10 @@ import { QuestionsManager } from './managedquestions.ts';
 ])
 //@RequireUser()
 export class QuestionsComponent {
+  constructor(private router: Router) {}
 
+    ngOnInit() {
+      this.router.navigate(['/questions/linkedquestions']);
+    }
 
 }
