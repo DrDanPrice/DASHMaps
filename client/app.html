@@ -1,29 +1,66 @@
 <div (click)="$event.preventDefault()">
   <tangram-map></tangram-map>
-
-  <tabset style="position:absolute;top:0px;left:0px;">
-    <tab heading="Map" [active]="true" (click)="onSelect('/map')">
-			<a [routerLink]="['/map']">Map</a>
-
-		</tab> <!--would be empty, to show map-->
-		<tab heading="Data">
-			<a  [routerLink]="['/data']">Data</a>
-		</tab>
-		<tab heading="Features">
-			<a  [routerLink]="['/features']">Features</a>
-		</tab>
-		<tab heading="Questions">
-			<a  [routerLink]="['/questions']">Questions</a>
-		</tab>
-		<tab heading="Styles">
-			<a  [routerLink]="['/styles']">Styles</a>
-		</tab>
-		<tab heading="Users">
-			<a  [routerLink]="['/userdisplay']">Users</a>
-			<login-buttons></login-buttons>
-		</tab>
-  </tabset>
-
+<!--left dropdown data    middle - map   right - people -->
+   <span pull-sm-left dropdown keyboardNav="true" (on-toggle)="toggled($event)">
+     <a href id="left-dropdown" dropdownToggle>
+       <h1>Map</h1>
+     </a>
+     <ul class="dropdown-menu" aria-labelledby="left-dropdown">
+      <li>
+				 <a class="dropdown-item" [routerLink]="['/about']">About</a>
+      </li>
+			<li>
+			 	<a class="dropdown-item" [routerLink]="['/features']">Features</a>
+		 	</li>
+			<li>
+				<a class="dropdown-item" [routerLink]="['/styles']">Styles</a>
+			</li>
+     </ul>
+   </span>
+	 <span center-block dropdown keyboardNav="true" (on-toggle)="toggled($event)">
+     <a href id="center-dropdown" dropdownToggle>
+       <h1>People</h1>
+     </a>
+     <ul class="dropdown-menu" aria-labelledby="center-dropdown">
+			 <li>
+ 				 <a class="dropdown-item"><login-buttons></login-buttons></a>
+       </li>
+      <li>
+				 <a class="dropdown-item" [routerLink]="['/userdisplay']">Users</a>
+      </li>
+			<li>
+			 	<a class="dropdown-item">Our Team</a>
+		 	</li>
+			<li>
+				<a class="dropdown-item">Message</a>
+			</li>
+     </ul>
+   </span>
+	 <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
+     <a href id="right-dropdown" dropdownToggle>
+       <h1>Data</h1>
+     </a>
+     <ul class="dropdown-menu" aria-labelledby="right-dropdown">
+      <li>
+				 <a class="dropdown-item" [routerLink]="['/questions']">Questions</a>
+      </li>
+			<li>
+				<a class="dropdown-item">Projects</a>
+			</li>
+			<li>
+				<a class="dropdown-item">Demographics</a>
+			</li>
+			<li>
+				<a class="dropdown-item">Health</a>
+			</li>
+			<li>
+			 	<a class="dropdown-item">Pollutants</a>
+		 	</li>
+			<li>
+				<a class="dropdown-item">Monitors</a>
+			</li>
+     </ul>
+   </span>
 <router-outlet></router-outlet>
 </div>
 

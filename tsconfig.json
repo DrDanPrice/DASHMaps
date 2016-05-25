@@ -18,6 +18,7 @@
     "**/*.ts"
   ],
   "files": [
+    "client/aboutdisplay.ts",
     "client/app.ts",
     "client/datadisplay.ts",
     "client/features.ts",
@@ -26,6 +27,7 @@
     "client/styledisplay.ts",
     "client/tangrammaps.ts",
     "client/userdisplay.ts",
+    "client/welcome.ts",
     "node_modules/@angular/common/esm/index.d.ts",
     "node_modules/@angular/common/esm/src/common_directives.d.ts",
     "node_modules/@angular/common/esm/src/directives.d.ts",

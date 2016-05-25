@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { Ng2BootstrapConfig, Ng2BootstrapTheme, TAB_DIRECTIVES } from '../node_modules/ng2-bootstrap';
+import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../node_modules/ng2-bootstrap';
 //https://github.com/valor-software/ng2-bootstrap/tree/development/demo
 import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
@@ -10,6 +10,8 @@ import { Routes, Router, ROUTER_DIRECTIVES } from '@angular/router';
 //components here - for some reason, import is not working from inside folders!
 //some setting is wrong??
 import { TangramMaps } from './tangrammaps.ts';
+import { AboutComponent } from './aboutdisplay.ts';
+import { WelcomeComponent } from './welcome.ts';
 import { UserComponent } from './userdisplay.ts';
 import { DataComponent } from './datadisplay.ts';
 import { StyleComponent } from './styledisplay.ts';
@@ -23,13 +25,14 @@ import { FeatureComponent } from './features.ts';
   directives: [
                 CORE_DIRECTIVES,
                 ROUTER_DIRECTIVES,
-                TAB_DIRECTIVES,
+                DROPDOWN_DIRECTIVES,
                 LoginButtons,
                 TangramMaps
               ]
 })
 @Routes([
-    { path: '/map', component: TangramMaps }, // , useAsDefault: true}, // coming soon
+    { path: '/', component: WelcomeComponent },
+    { path: '/about', component: AboutComponent },
     { path: '/data', component: DataComponent },
     { path: '/userdisplay', component: UserComponent },
     { path: '/styles', component: StyleComponent },
@@ -48,13 +51,25 @@ constructor(private router: Router) {
 
   onSelect() {
     console.log('wetf')
-    this.router.navigate(['/map']);
+    this.router.navigate(['/data']);
     //this.router.navigate(['/hero', hero.id]);
   }
 
+  public disabled:boolean = false;
+  public status:{isopen:boolean} = {isopen: false};
+
+  public toggled(open:boolean):void {
+    console.log('Dropdown is now: ', open);
+  }
+
+  public toggleDropdown($event:MouseEvent):void {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.status.isopen = !this.status.isopen;
+  }
+
    ngOnInit() {
-     console.log('weret')
-     this.router.navigate(['/map']);
+     this.router.navigate(['/']);
    }
 
   logout() {
