@@ -1,6 +1,5 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
 import { Component, OnInit, ChangeDetectionStrategy, Inject, Injectable, Input } from '@angular/core';
-
 //should be better way of doing these - not sure
 declare var L:any;
 declare var Tangram:any;
@@ -21,6 +20,11 @@ declare var window:any;
 
 //@RequireUser()
 export class TangramMaps {
+  public mapHt:number;
+  public tmap:any;
+  public scene:any;
+
+
   constructor () {
     this.mapHt = window.innerHeight;
 
@@ -29,7 +33,7 @@ export class TangramMaps {
      this.makeMap();
      let settings = this.getDefaultSettings().configsettings;
      this.addTangram(settings);
-     this.setMap();
+     this.setMap(29.7604,-95.3698,11);
   }
   //should be return <Object?
   //mongodb doesn't save fields that begin with $, so have to clean to and from database
@@ -54,21 +58,20 @@ export class TangramMaps {
     let scene = layer.scene;
     this.scene = scene;
     window.scene = scene;
-    layer.addTo(this.tmap):
+    layer.addTo(this.tmap);
     let self = this;
   }
-  setMap = function ({lat=29.7604,lng=-95.3698,zoom=11}:{lat?:number; lng?:number; zoom?:number}) {  //eventually come from geolocation -- check typescript on Leaflet to make sure same type
+  public setMap (lat?:number, lng?:number, zoom?:number):void {  //eventually come from geolocation -- check typescript on Leaflet to make sure same type
 		this.tmap.setView([lat,lng],zoom);
   }
 
-  public origYAML():any {
-    return JSON.parse( //or YAML.parse??
-
-    )
+  public origYAML(jsonobj:string):any {
+    return JSON.parse(jsonobj) //or YAML.parse??)
   }
-  readYAML = function(rawyaml){
+
+  public readYAML(yamlstr:string):any {
         //return Tangram.debug.yaml.safeLoad(rawyaml [json=true])
-        return Tangram.debug.yaml.safeLoad(rawyaml)
+        return Tangram.debug.yaml.safeLoad(yamlstr)
     }
 
 getDefaultSettings = function(){return {
