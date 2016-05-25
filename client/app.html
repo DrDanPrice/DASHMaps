@@ -1,7 +1,10 @@
+<!--should only have the main wrapper html, with logic coming from directives (like tangram-map) or routerLink-->
 <div (click)="$event.preventDefault()">
   <tangram-map></tangram-map>
-<!--left dropdown data    middle - map   right - people -->
-   <span pull-sm-left dropdown keyboardNav="true" (on-toggle)="toggled($event)">
+
+<div class="btn-group">
+  <button type="button" class="btn btn-secondary">
+   <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
      <a href id="left-dropdown" dropdownToggle>
        <h1>Map</h1>
      </a>
@@ -17,7 +20,9 @@
 			</li>
      </ul>
    </span>
-	 <span center-block dropdown keyboardNav="true" (on-toggle)="toggled($event)">
+ </button>
+   <button type="button" class="btn btn-secondary">
+	 <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
      <a href id="center-dropdown" dropdownToggle>
        <h1>People</h1>
      </a>
@@ -36,6 +41,8 @@
 			</li>
      </ul>
    </span>
+ </button>
+   <button type="button" class="btn btn-secondary">
 	 <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
      <a href id="right-dropdown" dropdownToggle>
        <h1>Data</h1>
@@ -61,6 +68,8 @@
 			</li>
      </ul>
    </span>
+ </button>
+ </div>
 <router-outlet></router-outlet>
 </div>
 

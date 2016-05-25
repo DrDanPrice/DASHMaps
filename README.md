@@ -18,13 +18,16 @@ On Mac OS or Linux:
 
 `curl https://install.meteor.com/ | sh`
 
-## ask Dan for the settings.json, which will include some passwords not to be saved on github
+## ask Dan for the settings.json, which will include some passwords not to be saved on github (not yet)
 
 For password security, using settings.json one level up: i.e, meteor --settings ../settings.json
 
 ## Testing in local development environment
+#will eventually have it done in proper fork into your own Git, then pull request back here
+#for now, clone from git, npm install in the project folder, then:
 
 `MONGO_URL=mongodb://localhost:27017/DataMaps meteor --settings ../settings.json`
+
 
 ## angular2-meteor - need to test what is in Github, and what has to be redone
 tutorial at: http://www.angular-meteor.com/tutorials/socially/angular2/bootstrapping

@@ -7,16 +7,15 @@ import { InjectUser, LoginButtons } from 'angular2-meteor-accounts-ui';
 import { MeteorComponent } from 'angular2-meteor';
 import { Routes, Router, ROUTER_DIRECTIVES } from '@angular/router';
 
-//components here - for some reason, import is not working from inside folders!
-//some setting is wrong??
-import { TangramMaps } from './tangrammaps.ts';
-import { AboutComponent } from './aboutdisplay.ts';
-import { WelcomeComponent } from './welcome.ts';
-import { UserComponent } from './userdisplay.ts';
-import { DataComponent } from './datadisplay.ts';
-import { StyleComponent } from './styledisplay.ts';
-import { QuestionsComponent } from './questions.ts';
-import { FeatureComponent } from './features.ts';
+//components here - for Meteor, they need to load from folder at higher level!
+import { TangramMaps } from '../components/tangrammaps.ts';
+import { AboutComponent } from '../components/aboutdisplay.ts';
+import { WelcomeComponent } from '../components/welcome.ts';
+import { UserComponent } from '../components/userdisplay.ts';
+import { DataComponent } from '../components/datadisplay.ts';
+import { StyleComponent } from '../components/styledisplay.ts';
+import { QuestionsComponent } from '../components/questions.ts';
+import { FeatureComponent } from '../components/features.ts';
 
 @Component({
   selector: 'app',

@@ -2,9 +2,9 @@
 import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
 
 @Component({
-  selector: 'questions-display',
-  templateUrl: 'client/templates/questions.html'
+  selector: 'linked-questions',
+  templateUrl: 'client/templates/linked_questions.html'
 })
 
 //@RequireUser()
-export class QuestionsComponent { }
+export class LinkedQuestions { }
