@@ -1,6 +1,6 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
 import { Component, OnInit, ChangeDetectionStrategy, Inject, Injectable, Input } from '@angular/core';
-import { AQMonitorsService } from '../services/aqmonitors_service.ts'
+import { AQMonitorsService } from '../services/aqmonitors_service.ts';
 
 declare var L:any;
 declare var Tangram:any;

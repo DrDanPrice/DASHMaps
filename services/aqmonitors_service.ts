@@ -1,15 +1,16 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Monitors } from '../collections/collects';
 import { Mongo }     from 'meteor/mongo';
-//import {MeteorComponent} from 'angular2-meteor';
+//import { MeteorComponent } from 'angular2-meteor';
 
 //mock a promise return first
 //then build it up
 @Injectable()
-export class AQMonitorsService { //} extends MeteorComponent{
+export class AQMonitorsService {// extends MeteorComponent{
   monitors:Mongo.Cursor<Object>;
 
   constructor(zone:NgZone){
+//    super();
     // Tracker.autorun(() => zone.run(() => {
 		// this.subscribe('monitors', () => {
 		// 	this.monitors = Monitors.find();

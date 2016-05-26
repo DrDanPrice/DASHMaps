@@ -1,0 +1,647 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'meteor-check' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /Users/dprice3/Documents/Projects/DASHMaps/package.json
+5 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/angular/package.json
+6 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/angular-meteor/package.json
+7 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/angular2-meteor/package.json
+8 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/angular2-meteor-accounts-ui/package.json
+9 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/angular2-meteor-auto-bootstrap/package.json
+10 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/bootstrap/package.json
+11 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/es6-shim/package.json
+12 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-node-stubs/package.json
+13 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/ng2-bootstrap/package.json
+14 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/reflect-metadata/package.json
+15 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/rxjs/package.json
+16 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/zone.js/package.json
+17 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/.meteor-portable/package.json
+18 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/common/package.json
+19 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/compiler/package.json
+20 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/core/package.json
+21 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/platform-browser/package.json
+22 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/router/package.json
+23 verbose installManyTop reading scoped package data from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/@angular/router-deprecated/package.json
+24 info package.json angular2-meteor-accounts-ui@0.4.3 No README data
+25 info package.json angular2-meteor-auto-bootstrap@0.5.5 No repository field.
+26 info package.json @angular/common@2.0.0-rc.1 No description
+27 info package.json @angular/common@2.0.0-rc.1 No repository field.
+28 info package.json @angular/common@2.0.0-rc.1 No README data
+29 info package.json @angular/compiler@2.0.0-rc.1 No description
+30 info package.json @angular/compiler@2.0.0-rc.1 No repository field.
+31 info package.json @angular/compiler@2.0.0-rc.1 No README data
+32 info package.json @angular/core@2.0.0-rc.1 No description
+33 info package.json @angular/core@2.0.0-rc.1 No repository field.
+34 info package.json @angular/core@2.0.0-rc.1 No README data
+35 info package.json @angular/platform-browser@2.0.0-rc.1 No description
+36 info package.json @angular/platform-browser@2.0.0-rc.1 No repository field.
+37 info package.json @angular/platform-browser@2.0.0-rc.1 No README data
+38 info package.json @angular/router@2.0.0-rc.1 No description
+39 info package.json @angular/router@2.0.0-rc.1 No repository field.
+40 info package.json @angular/router@2.0.0-rc.1 No README data
+41 info package.json @angular/router-deprecated@2.0.0-rc.1 No description
+42 info package.json @angular/router-deprecated@2.0.0-rc.1 No repository field.
+43 info package.json @angular/router-deprecated@2.0.0-rc.1 No README data
+44 info package.json angular-meteor@1.3.11 No repository field.
+45 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/package.json
+46 silly cache add args [ 'meteor-check', null ]
+47 verbose cache add spec meteor-check
+48 silly cache add parsed spec { raw: 'meteor-check',
+48 silly cache add   scope: null,
+48 silly cache add   name: 'meteor-check',
+48 silly cache add   rawSpec: '',
+48 silly cache add   spec: '*',
+48 silly cache add   type: 'range' }
+49 silly addNamed meteor-check@*
+50 verbose addNamed "*" is a valid semver range for meteor-check
+51 silly addNameRange { name: 'meteor-check', range: '*', hasData: false }
+52 silly mapToRegistry name meteor-check
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/meteor-check
+56 verbose addNameRange registry:https://registry.npmjs.org/meteor-check not in flight; fetching
+57 verbose request uri https://registry.npmjs.org/meteor-check
+58 verbose request no auth needed
+59 info attempt registry request try #1 at 5:21:42 PM
+60 verbose request id 64bae3cf8911c9a9
+61 http request GET https://registry.npmjs.org/meteor-check
+62 http 200 https://registry.npmjs.org/meteor-check
+63 silly get cb [ 200,
+63 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+63 silly get     etag: '"EY9GI1TT39UEM0T4C3MSQNT0Y"',
+63 silly get     'content-type': 'application/json',
+63 silly get     'content-encoding': 'gzip',
+63 silly get     'cache-control': 'max-age=300',
+63 silly get     'content-length': '947',
+63 silly get     'accept-ranges': 'bytes',
+63 silly get     date: 'Thu, 26 May 2016 22:21:42 GMT',
+63 silly get     via: '1.1 varnish',
+63 silly get     age: '0',
+63 silly get     connection: 'keep-alive',
+63 silly get     'x-served-by': 'cache-dfw1842-DFW',
+63 silly get     'x-cache': 'MISS',
+63 silly get     'x-cache-hits': '0',
+63 silly get     'x-timer': 'S1464301302.736551,VS0,VE234',
+63 silly get     vary: 'Accept-Encoding' } ]
+64 verbose get saving meteor-check to /Users/dprice3/.npm/registry.npmjs.org/meteor-check/.cache.json
+65 silly addNameRange number 2 { name: 'meteor-check', range: '*', hasData: true }
+66 silly addNameRange versions [ 'meteor-check', [ '1.0.6' ] ]
+67 silly addNamed meteor-check@1.0.6
+68 verbose addNamed "1.0.6" is a plain semver version for meteor-check
+69 silly mapToRegistry name meteor-check
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry https://registry.npmjs.org/
+72 silly mapToRegistry uri https://registry.npmjs.org/meteor-check
+73 verbose addRemoteTarball https://registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz not in flight; adding
+74 verbose addRemoteTarball [ 'https://registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz',
+74 verbose addRemoteTarball   '1aa44763bb87d324b011683f767736952ba5aa95' ]
+75 info retry fetch attempt 1 at 5:21:42 PM
+76 info attempt registry request try #1 at 5:21:42 PM
+77 http fetch GET https://registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz
+78 http fetch 200 https://registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz
+79 silly fetchAndShaCheck shasum 1aa44763bb87d324b011683f767736952ba5aa95
+80 verbose addTmpTarball /tmp/npm-3637-5f31d56a/registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz not in flight; adding
+81 verbose addTmpTarball already have metadata; skipping unpack for meteor-check@1.0.6
+82 silly cache afterAdd meteor-check@1.0.6
+83 verbose afterAdd /Users/dprice3/.npm/meteor-check/1.0.6/package/package.json not in flight; writing
+84 verbose afterAdd /Users/dprice3/.npm/meteor-check/1.0.6/package/package.json written
+85 silly install resolved [ { name: 'meteor-check',
+85 silly install resolved     version: '1.0.6',
+85 silly install resolved     description: 'Check whether a value matches a pattern library from Meteor made compatible for Nodejs and Browserify',
+85 silly install resolved     main: 'index.js',
+85 silly install resolved     scripts:
+85 silly install resolved      { prepublish: 'node build.js',
+85 silly install resolved        test: 'npm run prepublish && mocha --check-leaks test.js' },
+85 silly install resolved     keywords: [ 'Meteor', 'check', 'raix' ],
+85 silly install resolved     author: { name: 'Morten Henriksen' },
+85 silly install resolved     repository:
+85 silly install resolved      { type: 'git',
+85 silly install resolved        url: 'git://github.com/raix/npm-meteor-check.git' },
+85 silly install resolved     license: 'MIT',
+85 silly install resolved     dependencies: { underscore: '1.7.x', ejson: '2.0.1', fibers: '1.0.5' },
+85 silly install resolved     devDependencies: { assume: '1.1.x', mocha: '2.2.x', 'pre-commit': '1.0.x' },
+85 silly install resolved     bugs: { url: 'https://github.com/raix/npm-meteor-check/issues' },
+85 silly install resolved     homepage: 'https://github.com/raix/npm-meteor-check',
+85 silly install resolved     _id: 'meteor-check@1.0.6',
+85 silly install resolved     _shasum: '1aa44763bb87d324b011683f767736952ba5aa95',
+85 silly install resolved     _from: 'meteor-check@*',
+85 silly install resolved     _npmVersion: '2.5.1',
+85 silly install resolved     _nodeVersion: '0.12.0',
+85 silly install resolved     _npmUser: { name: 'raix', email: 'mh@gi-software.com' },
+85 silly install resolved     dist:
+85 silly install resolved      { shasum: '1aa44763bb87d324b011683f767736952ba5aa95',
+85 silly install resolved        tarball: 'https://registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz' },
+85 silly install resolved     maintainers: [ [Object] ],
+85 silly install resolved     directories: {},
+85 silly install resolved     _resolved: 'https://registry.npmjs.org/meteor-check/-/meteor-check-1.0.6.tgz' } ]
+86 info install meteor-check@1.0.6 into /Users/dprice3/Documents/Projects/DASHMaps
+87 info installOne meteor-check@1.0.6
+88 verbose installOne of meteor-check to /Users/dprice3/Documents/Projects/DASHMaps not in flight; installing
+89 verbose lock using /Users/dprice3/.npm/_locks/meteor-check-e73a9c0eb5d04f73.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+90 silly install write writing meteor-check 1.0.6 to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+91 verbose unbuild node_modules/meteor-check
+92 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check is being purged from base /Users/dprice3/Documents/Projects/DASHMaps
+93 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+94 verbose tar unpack /Users/dprice3/.npm/meteor-check/1.0.6/package.tgz
+95 verbose tar unpacking to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+96 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check is being purged
+97 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+98 silly gunzTarPerm modes [ '755', '644' ]
+99 silly gunzTarPerm extractEntry package.json
+100 silly gunzTarPerm extractEntry README.md
+101 silly gunzTarPerm extractEntry LICENSE
+102 silly gunzTarPerm extractEntry build.js
+103 silly gunzTarPerm extractEntry index.js
+104 silly gunzTarPerm extractEntry test.js
+105 silly gunzTarPerm extractEntry vendor/dynamics_nodejs.js
+106 silly gunzTarPerm extractEntry vendor/errors.js
+107 silly gunzTarPerm extractEntry vendor/helpers.js
+108 silly gunzTarPerm extractEntry vendor/match.js
+109 silly gunzTarPerm extractEntry vendor/dl.sh
+110 verbose write writing to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/package.json
+111 info preinstall meteor-check@1.0.6
+112 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/package.json
+113 silly prepareForInstallMany adding underscore@1.7.x from meteor-check dependencies
+114 silly prepareForInstallMany adding ejson@2.0.1 from meteor-check dependencies
+115 silly prepareForInstallMany adding fibers@1.0.5 from meteor-check dependencies
+116 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/package.json
+117 silly cache add args [ 'ejson@2.0.1', null ]
+118 verbose cache add spec ejson@2.0.1
+119 silly cache add parsed spec { raw: 'ejson@2.0.1',
+119 silly cache add   scope: null,
+119 silly cache add   name: 'ejson',
+119 silly cache add   rawSpec: '2.0.1',
+119 silly cache add   spec: '2.0.1',
+119 silly cache add   type: 'version' }
+120 silly addNamed ejson@2.0.1
+121 verbose addNamed "2.0.1" is a plain semver version for ejson
+122 silly mapToRegistry name ejson
+123 silly mapToRegistry using default registry
+124 silly mapToRegistry registry https://registry.npmjs.org/
+125 silly mapToRegistry uri https://registry.npmjs.org/ejson
+126 verbose addNameVersion registry:https://registry.npmjs.org/ejson not in flight; fetching
+127 silly cache add args [ 'fibers@1.0.5', null ]
+128 verbose cache add spec fibers@1.0.5
+129 silly cache add parsed spec { raw: 'fibers@1.0.5',
+129 silly cache add   scope: null,
+129 silly cache add   name: 'fibers',
+129 silly cache add   rawSpec: '1.0.5',
+129 silly cache add   spec: '1.0.5',
+129 silly cache add   type: 'version' }
+130 silly addNamed fibers@1.0.5
+131 verbose addNamed "1.0.5" is a plain semver version for fibers
+132 silly mapToRegistry name fibers
+133 silly mapToRegistry using default registry
+134 silly mapToRegistry registry https://registry.npmjs.org/
+135 silly mapToRegistry uri https://registry.npmjs.org/fibers
+136 verbose addNameVersion registry:https://registry.npmjs.org/fibers not in flight; fetching
+137 silly cache add args [ 'underscore@1.7.x', null ]
+138 verbose cache add spec underscore@1.7.x
+139 silly cache add parsed spec { raw: 'underscore@1.7.x',
+139 silly cache add   scope: null,
+139 silly cache add   name: 'underscore',
+139 silly cache add   rawSpec: '1.7.x',
+139 silly cache add   spec: '>=1.7.0 <1.8.0',
+139 silly cache add   type: 'range' }
+140 silly addNamed underscore@>=1.7.0 <1.8.0
+141 verbose addNamed ">=1.7.0 <1.8.0" is a valid semver range for underscore
+142 silly addNameRange { name: 'underscore', range: '>=1.7.0 <1.8.0', hasData: false }
+143 silly mapToRegistry name underscore
+144 silly mapToRegistry using default registry
+145 silly mapToRegistry registry https://registry.npmjs.org/
+146 silly mapToRegistry uri https://registry.npmjs.org/underscore
+147 verbose addNameRange registry:https://registry.npmjs.org/underscore not in flight; fetching
+148 verbose request uri https://registry.npmjs.org/ejson
+149 verbose request no auth needed
+150 info attempt registry request try #1 at 5:21:43 PM
+151 http request GET https://registry.npmjs.org/ejson
+152 verbose request uri https://registry.npmjs.org/underscore
+153 verbose request no auth needed
+154 info attempt registry request try #1 at 5:21:43 PM
+155 verbose etag "6ZMDOEJMIE5SJFLT041CVM3D9"
+156 http request GET https://registry.npmjs.org/underscore
+157 verbose request uri https://registry.npmjs.org/fibers
+158 verbose request no auth needed
+159 info attempt registry request try #1 at 5:21:43 PM
+160 verbose etag "EVWXHE5K16HTS5BY9L958MZ0K"
+161 http request GET https://registry.npmjs.org/fibers
+162 http 304 https://registry.npmjs.org/underscore
+163 silly get cb [ 304,
+163 silly get   { date: 'Thu, 26 May 2016 22:21:43 GMT',
+163 silly get     via: '1.1 varnish',
+163 silly get     'cache-control': 'max-age=300',
+163 silly get     etag: '"6ZMDOEJMIE5SJFLT041CVM3D9"',
+163 silly get     age: '16',
+163 silly get     connection: 'keep-alive',
+163 silly get     'x-served-by': 'cache-dfw1847-DFW',
+163 silly get     'x-cache': 'HIT',
+163 silly get     'x-cache-hits': '1',
+163 silly get     'x-timer': 'S1464301303.346535,VS0,VE0',
+163 silly get     vary: 'Accept-Encoding' } ]
+164 verbose etag https://registry.npmjs.org/underscore from cache
+165 verbose get saving underscore to /Users/dprice3/.npm/registry.npmjs.org/underscore/.cache.json
+166 silly addNameRange number 2 { name: 'underscore', range: '>=1.7.0 <1.8.0', hasData: true }
+167 silly addNameRange versions [ 'underscore',
+167 silly addNameRange   [ '1.0.3',
+167 silly addNameRange     '1.0.4',
+167 silly addNameRange     '1.1.0',
+167 silly addNameRange     '1.1.1',
+167 silly addNameRange     '1.1.2',
+167 silly addNameRange     '1.1.3',
+167 silly addNameRange     '1.1.4',
+167 silly addNameRange     '1.1.5',
+167 silly addNameRange     '1.1.6',
+167 silly addNameRange     '1.1.7',
+167 silly addNameRange     '1.2.0',
+167 silly addNameRange     '1.2.1',
+167 silly addNameRange     '1.2.2',
+167 silly addNameRange     '1.2.3',
+167 silly addNameRange     '1.2.4',
+167 silly addNameRange     '1.3.0',
+167 silly addNameRange     '1.3.1',
+167 silly addNameRange     '1.3.2',
+167 silly addNameRange     '1.3.3',
+167 silly addNameRange     '1.4.0',
+167 silly addNameRange     '1.4.1',
+167 silly addNameRange     '1.4.2',
+167 silly addNameRange     '1.4.3',
+167 silly addNameRange     '1.4.4',
+167 silly addNameRange     '1.5.0',
+167 silly addNameRange     '1.5.1',
+167 silly addNameRange     '1.5.2',
+167 silly addNameRange     '1.6.0',
+167 silly addNameRange     '1.7.0',
+167 silly addNameRange     '1.8.0',
+167 silly addNameRange     '1.8.1',
+167 silly addNameRange     '1.8.2',
+167 silly addNameRange     '1.8.3' ] ]
+168 silly addNamed underscore@1.7.0
+169 verbose addNamed "1.7.0" is a plain semver version for underscore
+170 silly cache afterAdd underscore@1.7.0
+171 verbose afterAdd /Users/dprice3/.npm/underscore/1.7.0/package/package.json not in flight; writing
+172 verbose afterAdd /Users/dprice3/.npm/underscore/1.7.0/package/package.json written
+173 http 200 https://registry.npmjs.org/fibers
+174 silly get cb [ 200,
+174 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+174 silly get     etag: '"B1HLOX4BPCTKAK6BSCUUYM7GU"',
+174 silly get     'content-type': 'application/json',
+174 silly get     'content-encoding': 'gzip',
+174 silly get     'cache-control': 'max-age=300',
+174 silly get     'content-length': '12866',
+174 silly get     'accept-ranges': 'bytes',
+174 silly get     date: 'Thu, 26 May 2016 22:21:43 GMT',
+174 silly get     via: '1.1 varnish',
+174 silly get     age: '199',
+174 silly get     connection: 'keep-alive',
+174 silly get     'x-served-by': 'cache-dfw1827-DFW',
+174 silly get     'x-cache': 'HIT',
+174 silly get     'x-cache-hits': '1',
+174 silly get     'x-timer': 'S1464301303.346856,VS0,VE0',
+174 silly get     vary: 'Accept-Encoding' } ]
+175 verbose get saving fibers to /Users/dprice3/.npm/registry.npmjs.org/fibers/.cache.json
+176 silly mapToRegistry name fibers
+177 silly mapToRegistry using default registry
+178 silly mapToRegistry registry https://registry.npmjs.org/
+179 silly mapToRegistry uri https://registry.npmjs.org/fibers
+180 verbose addRemoteTarball https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz not in flight; adding
+181 verbose addRemoteTarball [ 'https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz',
+181 verbose addRemoteTarball   '3bea1f697d8540bb3904961ad50939bdee1df678' ]
+182 info retry fetch attempt 1 at 5:21:43 PM
+183 info attempt registry request try #1 at 5:21:43 PM
+184 http fetch GET https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz
+185 http fetch 200 https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz
+186 silly fetchAndShaCheck shasum 3bea1f697d8540bb3904961ad50939bdee1df678
+187 verbose addTmpTarball /tmp/npm-3637-5f31d56a/registry.npmjs.org/fibers/-/fibers-1.0.5.tgz not in flight; adding
+188 verbose addTmpTarball already have metadata; skipping unpack for fibers@1.0.5
+189 silly cache afterAdd fibers@1.0.5
+190 verbose afterAdd /Users/dprice3/.npm/fibers/1.0.5/package/package.json not in flight; writing
+191 verbose afterAdd /Users/dprice3/.npm/fibers/1.0.5/package/package.json written
+192 http 200 https://registry.npmjs.org/ejson
+193 silly get cb [ 200,
+193 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+193 silly get     etag: '"MINLTY0T7KWHIJ8DRGWEDMH2"',
+193 silly get     'content-type': 'application/json',
+193 silly get     'content-encoding': 'gzip',
+193 silly get     'cache-control': 'max-age=300',
+193 silly get     'content-length': '2869',
+193 silly get     'accept-ranges': 'bytes',
+193 silly get     date: 'Thu, 26 May 2016 22:21:43 GMT',
+193 silly get     via: '1.1 varnish',
+193 silly get     age: '0',
+193 silly get     connection: 'keep-alive',
+193 silly get     'x-served-by': 'cache-dfw1842-DFW',
+193 silly get     'x-cache': 'MISS',
+193 silly get     'x-cache-hits': '0',
+193 silly get     'x-timer': 'S1464301303.346271,VS0,VE258',
+193 silly get     vary: 'Accept-Encoding' } ]
+194 verbose get saving ejson to /Users/dprice3/.npm/registry.npmjs.org/ejson/.cache.json
+195 silly mapToRegistry name ejson
+196 silly mapToRegistry using default registry
+197 silly mapToRegistry registry https://registry.npmjs.org/
+198 silly mapToRegistry uri https://registry.npmjs.org/ejson
+199 verbose addRemoteTarball https://registry.npmjs.org/ejson/-/ejson-2.0.1.tgz not in flight; adding
+200 verbose addRemoteTarball [ 'https://registry.npmjs.org/ejson/-/ejson-2.0.1.tgz',
+200 verbose addRemoteTarball   'fa99afad8ecc503d00b6d6bcc9d9959d5e1f3c5d' ]
+201 info retry fetch attempt 1 at 5:21:43 PM
+202 info attempt registry request try #1 at 5:21:43 PM
+203 http fetch GET https://registry.npmjs.org/ejson/-/ejson-2.0.1.tgz
+204 http fetch 200 https://registry.npmjs.org/ejson/-/ejson-2.0.1.tgz
+205 silly fetchAndShaCheck shasum fa99afad8ecc503d00b6d6bcc9d9959d5e1f3c5d
+206 verbose addTmpTarball /tmp/npm-3637-5f31d56a/registry.npmjs.org/ejson/-/ejson-2.0.1.tgz not in flight; adding
+207 verbose addTmpTarball already have metadata; skipping unpack for ejson@2.0.1
+208 silly cache afterAdd ejson@2.0.1
+209 verbose afterAdd /Users/dprice3/.npm/ejson/2.0.1/package/package.json not in flight; writing
+210 verbose afterAdd /Users/dprice3/.npm/ejson/2.0.1/package/package.json written
+211 silly install resolved [ { name: 'underscore',
+211 silly install resolved     description: 'JavaScript\'s functional programming helper library.',
+211 silly install resolved     homepage: 'http://underscorejs.org',
+211 silly install resolved     keywords: [ 'util', 'functional', 'server', 'client', 'browser' ],
+211 silly install resolved     author: { name: 'Jeremy Ashkenas', email: 'jeremy@documentcloud.org' },
+211 silly install resolved     repository:
+211 silly install resolved      { type: 'git',
+211 silly install resolved        url: 'git://github.com/jashkenas/underscore.git' },
+211 silly install resolved     main: 'underscore.js',
+211 silly install resolved     version: '1.7.0',
+211 silly install resolved     devDependencies:
+211 silly install resolved      { docco: '0.6.x',
+211 silly install resolved        phantomjs: '1.9.7-1',
+211 silly install resolved        'uglify-js': '2.4.x',
+211 silly install resolved        eslint: '0.6.x' },
+211 silly install resolved     scripts:
+211 silly install resolved      { test: 'phantomjs test/vendor/runner.js test/index.html?noglobals=true && eslint underscore.js test/*.js test/vendor/runner.js',
+211 silly install resolved        build: 'uglifyjs underscore.js -c "evaluate=false" --comments "/    .*/" -m --source-map underscore-min.map -o underscore-min.js',
+211 silly install resolved        doc: 'docco underscore.js' },
+211 silly install resolved     licenses: [ [Object] ],
+211 silly install resolved     files: [ 'underscore.js', 'underscore-min.js', 'LICENSE' ],
+211 silly install resolved     gitHead: 'da996e665deb0b69b257e80e3e257c04fde4191c',
+211 silly install resolved     bugs: { url: 'https://github.com/jashkenas/underscore/issues' },
+211 silly install resolved     _id: 'underscore@1.7.0',
+211 silly install resolved     _shasum: '6bbaf0877500d36be34ecaa584e0db9fef035209',
+211 silly install resolved     _from: 'underscore@>=1.7.0 <1.8.0',
+211 silly install resolved     _npmVersion: '1.4.24',
+211 silly install resolved     _npmUser: { name: 'jashkenas', email: 'jashkenas@gmail.com' },
+211 silly install resolved     maintainers: [ [Object] ],
+211 silly install resolved     dist:
+211 silly install resolved      { shasum: '6bbaf0877500d36be34ecaa584e0db9fef035209',
+211 silly install resolved        tarball: 'http://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz' },
+211 silly install resolved     directories: {},
+211 silly install resolved     _resolved: 'https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz',
+211 silly install resolved     readme: '                       __\n                      /\\ \\                                                         __\n     __  __    ___    \\_\\ \\     __   _ __   ____    ___    ___   _ __    __       /\\_\\    ____\n    /\\ \\/\\ \\ /\' _ `\\  /\'_  \\  /\'__`\\/\\  __\\/ ,__\\  / ___\\ / __`\\/\\  __\\/\'__`\\     \\/\\ \\  /\',__\\\n    \\ \\ \\_\\ \\/\\ \\/\\ \\/\\ \\ \\ \\/\\  __/\\ \\ \\//\\__, `\\/\\ \\__//\\ \\ \\ \\ \\ \\//\\  __/  __  \\ \\ \\/\\__, `\\\n     \\ \\____/\\ \\_\\ \\_\\ \\___,_\\ \\____\\\\ \\_\\\\/\\____/\\ \\____\\ \\____/\\ \\_\\\\ \\____\\/\\_\\ _\\ \\ \\/\\____/\n      \\/___/  \\/_/\\/_/\\/__,_ /\\/____/ \\/_/ \\/___/  \\/____/\\/___/  \\/_/ \\/____/\\/_//\\ \\_\\ \\/___/\n                                                                                  \\ \\____/\n                                                                                   \\/___/\n\nUnderscore.js is a utility-belt library for JavaScript that provides\nsupport for the usual functional suspects (each, map, reduce, filter...)\nwithout extending any core JavaScript objects.\n\nFor Docs, License, Tests, and pre-packed downloads, see:\nhttp://underscorejs.org\n\nUnderscore is an open-sourced component of DocumentCloud:\nhttps://github.com/documentcloud\n\nMany thanks to our contributors:\nhttps://github.com/jashkenas/underscore/contributors\n',
+211 silly install resolved     readmeFilename: 'README.md' },
+211 silly install resolved   { name: 'fibers',
+211 silly install resolved     version: '1.0.5',
+211 silly install resolved     description: 'Cooperative multi-tasking for Javascript',
+211 silly install resolved     keywords:
+211 silly install resolved      [ 'fiber',
+211 silly install resolved        'fibers',
+211 silly install resolved        'coroutine',
+211 silly install resolved        'thread',
+211 silly install resolved        'async',
+211 silly install resolved        'parallel',
+211 silly install resolved        'worker',
+211 silly install resolved        'future',
+211 silly install resolved        'promise' ],
+211 silly install resolved     homepage: 'https://github.com/laverdet/node-fibers',
+211 silly install resolved     author:
+211 silly install resolved      { name: 'Marcel Laverdet',
+211 silly install resolved        email: 'marcel@laverdet.com',
+211 silly install resolved        url: 'https://github.com/laverdet/' },
+211 silly install resolved     main: 'fibers',
+211 silly install resolved     scripts: { install: 'node ./build.js', test: 'node ./test.js' },
+211 silly install resolved     repository:
+211 silly install resolved      { type: 'git',
+211 silly install resolved        url: 'git://github.com/laverdet/node-fibers.git' },
+211 silly install resolved     engines: { node: '>=0.5.2' },
+211 silly install resolved     gitHead: 'aff726a79af0c9d400ec0fa37be53f23643a4623',
+211 silly install resolved     bugs: { url: 'https://github.com/laverdet/node-fibers/issues' },
+211 silly install resolved     _id: 'fibers@1.0.5',
+211 silly install resolved     _shasum: '3bea1f697d8540bb3904961ad50939bdee1df678',
+211 silly install resolved     _from: 'fibers@1.0.5',
+211 silly install resolved     _npmVersion: '1.4.28',
+211 silly install resolved     _npmUser: { name: 'laverdet', email: 'marcel.npm@laverdet.com' },
+211 silly install resolved     maintainers: [ [Object] ],
+211 silly install resolved     dist:
+211 silly install resolved      { shasum: '3bea1f697d8540bb3904961ad50939bdee1df678',
+211 silly install resolved        tarball: 'https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz' },
+211 silly install resolved     directories: {},
+211 silly install resolved     _resolved: 'https://registry.npmjs.org/fibers/-/fibers-1.0.5.tgz' },
+211 silly install resolved   { name: 'ejson',
+211 silly install resolved     version: '2.0.1',
+211 silly install resolved     description: 'EJSON - Extended and Extensible JSON library from Meteor made compatible for Nodejs and Browserif',
+211 silly install resolved     main: 'index.js',
+211 silly install resolved     scripts:
+211 silly install resolved      { prepublish: 'node build.js',
+211 silly install resolved        test: 'npm run prepublish && mocha --check-leaks test.js' },
+211 silly install resolved     keywords:
+211 silly install resolved      [ 'EJSON',
+211 silly install resolved        'Extended',
+211 silly install resolved        'Extensible',
+211 silly install resolved        'JSON',
+211 silly install resolved        'Meteor',
+211 silly install resolved        'ejson',
+211 silly install resolved        'primus' ],
+211 silly install resolved     author: { name: 'Arnout Kazemier' },
+211 silly install resolved     repository: { type: 'git', url: 'git://github.com/primus/ejson.git' },
+211 silly install resolved     license: 'MIT',
+211 silly install resolved     dependencies: { underscore: '1.7.x' },
+211 silly install resolved     devDependencies: { assume: '0.0.x', mocha: '2.1.x', 'pre-commit': '0.0.x' },
+211 silly install resolved     gitHead: 'f1e8d867d5903f84b77d2f738f1ce248620ba2a5',
+211 silly install resolved     bugs: { url: 'https://github.com/primus/ejson/issues' },
+211 silly install resolved     homepage: 'https://github.com/primus/ejson',
+211 silly install resolved     _id: 'ejson@2.0.1',
+211 silly install resolved     _shasum: 'fa99afad8ecc503d00b6d6bcc9d9959d5e1f3c5d',
+211 silly install resolved     _from: 'ejson@2.0.1',
+211 silly install resolved     _npmVersion: '1.4.28',
+211 silly install resolved     _npmUser: { name: 'V1', email: 'info@3rd-Eden.com' },
+211 silly install resolved     maintainers: [ [Object], [Object] ],
+211 silly install resolved     dist:
+211 silly install resolved      { shasum: 'fa99afad8ecc503d00b6d6bcc9d9959d5e1f3c5d',
+211 silly install resolved        tarball: 'https://registry.npmjs.org/ejson/-/ejson-2.0.1.tgz' },
+211 silly install resolved     directories: {},
+211 silly install resolved     _resolved: 'https://registry.npmjs.org/ejson/-/ejson-2.0.1.tgz' } ]
+212 info install underscore@1.7.0 into /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+213 info install fibers@1.0.5 into /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+214 info install ejson@2.0.1 into /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+215 info installOne underscore@1.7.0
+216 verbose installOne of underscore to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check not in flight; installing
+217 info installOne fibers@1.0.5
+218 verbose installOne of fibers to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check not in flight; installing
+219 info installOne ejson@2.0.1
+220 verbose installOne of ejson to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check not in flight; installing
+221 verbose lock using /Users/dprice3/.npm/_locks/underscore-32b9166df90c6af5.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+222 silly install write writing underscore 1.7.0 to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+223 verbose lock using /Users/dprice3/.npm/_locks/fibers-c6e8d885a955543f.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+224 verbose lock using /Users/dprice3/.npm/_locks/ejson-d6a818e77269163b.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+225 silly install write writing fibers 1.0.5 to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+226 silly install write writing ejson 2.0.1 to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+227 verbose unbuild node_modules/meteor-check/node_modules/underscore
+228 verbose unbuild node_modules/meteor-check/node_modules/fibers
+229 verbose unbuild node_modules/meteor-check/node_modules/ejson
+230 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore is being purged from base /Users/dprice3/Documents/Projects/DASHMaps
+231 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+232 verbose tar unpack /Users/dprice3/.npm/underscore/1.7.0/package.tgz
+233 verbose tar unpacking to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+234 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore is being purged
+235 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+236 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers is being purged from base /Users/dprice3/Documents/Projects/DASHMaps
+237 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+238 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson is being purged from base /Users/dprice3/Documents/Projects/DASHMaps
+239 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+240 silly gunzTarPerm modes [ '755', '644' ]
+241 verbose tar unpack /Users/dprice3/.npm/fibers/1.0.5/package.tgz
+242 verbose tar unpacking to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+243 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers is being purged
+244 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+245 verbose tar unpack /Users/dprice3/.npm/ejson/2.0.1/package.tgz
+246 verbose tar unpacking to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+247 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson is being purged
+248 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+249 silly gunzTarPerm modes [ '755', '644' ]
+250 silly gunzTarPerm modes [ '755', '644' ]
+251 silly gunzTarPerm extractEntry package.json
+252 silly gunzTarPerm extractEntry package.json
+253 silly gunzTarPerm extractEntry package.json
+254 silly gunzTarPerm extractEntry README.md
+255 silly gunzTarPerm extractEntry LICENSE
+256 silly gunzTarPerm extractEntry .npmignore
+257 silly gunzTarPerm extractEntry README.md
+258 silly gunzTarPerm extractEntry README.md
+259 silly gunzTarPerm extractEntry index.js
+260 silly gunzTarPerm extractEntry LICENSE
+261 silly gunzTarPerm extractEntry build.js
+262 silly gunzTarPerm extractEntry underscore-min.js
+263 silly gunzTarPerm extractEntry quick-test.js
+264 silly gunzTarPerm extractEntry future.js
+265 silly gunzTarPerm extractEntry source.js
+266 silly gunzTarPerm extractEntry vendor/base64.js
+267 silly gunzTarPerm extractEntry vendor/ejson.js
+268 silly gunzTarPerm extractEntry underscore.js
+269 silly gunzTarPerm extractEntry build.js
+270 silly gunzTarPerm extractEntry test.js
+271 silly gunzTarPerm extractEntry fibers.js
+272 silly gunzTarPerm extractEntry binding.gyp
+273 silly gunzTarPerm extractEntry bin/.npmignore
+274 silly gunzTarPerm extractEntry bin/darwin-ia32-v8-3.14/fibers.node
+275 silly gunzTarPerm extractEntry bin/darwin-x64-v8-3.14/fibers.node
+276 silly gunzTarPerm extractEntry bin/linux-ia32-v8-3.14/fibers.node
+277 silly gunzTarPerm extractEntry bin/linux-x64-v8-3.14/fibers.node
+278 silly gunzTarPerm extractEntry bin/win32-ia32-v8-3.14/fibers.node
+279 silly gunzTarPerm extractEntry bin/win32-x64-v8-3.14/fibers.node
+280 verbose write writing to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson/package.json
+281 info preinstall ejson@2.0.1
+282 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson/package.json
+283 silly gunzTarPerm extractEntry src/coroutine.cc
+284 silly gunzTarPerm extractEntry src/coroutine.h
+285 silly gunzTarPerm extractEntry src/fibers.cc
+286 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson/package.json
+287 verbose write writing to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore/package.json
+288 info preinstall underscore@1.7.0
+289 silly install resolved []
+290 verbose about to build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+291 info build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+292 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore/package.json
+293 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore/package.json
+294 info linkStuff ejson@2.0.1
+295 silly linkStuff ejson@2.0.1 has /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules as its parent node_modules
+296 silly install resolved []
+297 verbose about to build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+298 info build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+299 silly gunzTarPerm extractEntry src/libcoro/README
+300 info linkStuff underscore@1.7.0
+301 silly linkStuff underscore@1.7.0 has /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules as its parent node_modules
+302 verbose linkBins ejson@2.0.1
+303 verbose linkMans ejson@2.0.1
+304 verbose rebuildBundles ejson@2.0.1
+305 info install ejson@2.0.1
+306 info postinstall ejson@2.0.1
+307 verbose unlock done using /Users/dprice3/.npm/_locks/ejson-d6a818e77269163b.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/ejson
+308 verbose linkBins underscore@1.7.0
+309 verbose linkMans underscore@1.7.0
+310 verbose rebuildBundles underscore@1.7.0
+311 info install underscore@1.7.0
+312 info postinstall underscore@1.7.0
+313 verbose unlock done using /Users/dprice3/.npm/_locks/underscore-32b9166df90c6af5.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/underscore
+314 silly gunzTarPerm extractEntry src/libcoro/LICENSE
+315 silly gunzTarPerm extractEntry src/libcoro/conftest.c
+316 silly gunzTarPerm extractEntry src/libcoro/coro.c
+317 silly gunzTarPerm extractEntry src/libcoro/coro.h
+318 silly gunzTarPerm extractEntry test/already-running.js
+319 silly gunzTarPerm extractEntry test/exit.js
+320 silly gunzTarPerm extractEntry test/fibonacci.js
+321 silly gunzTarPerm extractEntry test/finish-multiple.js
+322 silly gunzTarPerm extractEntry test/exec.js
+323 silly gunzTarPerm extractEntry test/future.js
+324 silly gunzTarPerm extractEntry test/illegal-yield.js
+325 silly gunzTarPerm extractEntry test/pool.js
+326 silly gunzTarPerm extractEntry test/process-title.js
+327 silly gunzTarPerm extractEntry test/stack-overflow.js
+328 silly gunzTarPerm extractEntry test/current.js
+329 silly gunzTarPerm extractEntry test/stack-overflow2.js
+330 silly gunzTarPerm extractEntry test/child-process.js
+331 silly gunzTarPerm extractEntry test/started.js
+332 silly gunzTarPerm extractEntry test/bad-context.js
+333 silly gunzTarPerm extractEntry test/unwind.js
+334 silly gunzTarPerm extractEntry test/future-exception.js
+335 verbose write writing to /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers/package.json
+336 info preinstall fibers@1.0.5
+337 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers/package.json
+338 verbose readDependencies loading dependencies from /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers/package.json
+339 silly install resolved []
+340 verbose about to build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+341 info build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+342 info linkStuff fibers@1.0.5
+343 silly linkStuff fibers@1.0.5 has /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules as its parent node_modules
+344 verbose linkBins fibers@1.0.5
+345 verbose linkMans fibers@1.0.5
+346 verbose rebuildBundles fibers@1.0.5
+347 info install fibers@1.0.5
+348 verbose unsafe-perm in lifecycle false
+349 info fibers@1.0.5 Failed to exec install script
+350 verbose unlock done using /Users/dprice3/.npm/_locks/fibers-c6e8d885a955543f.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+351 verbose about to build /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+352 verbose unlock done using /Users/dprice3/.npm/_locks/meteor-check-e73a9c0eb5d04f73.lock for /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+353 verbose stack Error: fibers@1.0.5 install: `node ./build.js`
+353 verbose stack Exit status 1
+353 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+353 verbose stack     at EventEmitter.emit (events.js:110:17)
+353 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+353 verbose stack     at ChildProcess.emit (events.js:110:17)
+353 verbose stack     at maybeClose (child_process.js:1015:16)
+353 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+354 verbose pkgid fibers@1.0.5
+355 verbose cwd /Users/dprice3/Documents/Projects/DASHMaps
+356 error Darwin 15.4.0
+357 error argv "node" "/usr/local/bin/npm" "install" "meteor-check"
+358 error node v0.12.7
+359 error npm  v2.11.3
+360 error code ELIFECYCLE
+361 error fibers@1.0.5 install: `node ./build.js`
+361 error Exit status 1
+362 error Failed at the fibers@1.0.5 install script 'node ./build.js'.
+362 error This is most likely a problem with the fibers package,
+362 error not with npm itself.
+362 error Tell the author that this fails on your system:
+362 error     node ./build.js
+362 error You can get their info via:
+362 error     npm owner ls fibers
+362 error There is likely additional logging output above.
+363 verbose exit [ 1, true ]
+364 verbose unbuild node_modules/meteor-check/node_modules/fibers
+365 info preuninstall fibers@1.0.5
+366 info uninstall fibers@1.0.5
+367 verbose unbuild rmStuff fibers@1.0.5 from /Users/dprice3/Documents/Projects/DASHMaps/node_modules
+368 verbose unbuild rmStuff in /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules
+369 info postuninstall fibers@1.0.5
+370 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers is being purged from base /Users/dprice3/Documents/Projects/DASHMaps
+371 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+372 silly vacuum-fs purging /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules/fibers
+373 silly vacuum-fs quitting because other entries in /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check/node_modules
+374 verbose unbuild node_modules/meteor-check
+375 info preuninstall meteor-check@1.0.6
+376 info uninstall meteor-check@1.0.6
+377 verbose unbuild rmStuff meteor-check@1.0.6 from /Users/dprice3/Documents/Projects/DASHMaps/node_modules
+378 info postuninstall meteor-check@1.0.6
+379 silly gentlyRm /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check is being purged from base /Users/dprice3/Documents/Projects/DASHMaps
+380 verbose gentlyRm don't care about contents; nuking /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+381 silly vacuum-fs purging /Users/dprice3/Documents/Projects/DASHMaps/node_modules/meteor-check
+382 silly vacuum-fs quitting because other entries in /Users/dprice3/Documents/Projects/DASHMaps/node_modules
