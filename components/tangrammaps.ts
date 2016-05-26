@@ -31,7 +31,16 @@ export class TangramMaps implements OnInit {
     this.mapHt = window.innerHeight;
   }
   getAQMonitors () {
-    this.AQMonitorsService.getAQMonitors().then(aqmonitors => this.aqmonitors = aqmonitors);
+    this.AQMonitorsService.getAQMonitors().then(aqmonitors =>
+      this.processMonitors(aqmonitors)
+    );
+  }
+  processMonitors (aqmonitors){
+    this.aqmonitors = aqmonitors
+    aqmonitors.forEach(function(e){
+      console.log(e)
+    })
+    console.log(aqmonitors)
   }
   // getHeroes() {
   //   this.heroService.getHeroes().then(heroes => this.heroes = heroes);
