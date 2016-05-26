@@ -1,12 +1,14 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
 import { Component, OnInit, ChangeDetectionStrategy, Inject, Injectable, Input } from '@angular/core';
-//should be better way of doing these - not sure
+import { AQMonitorsService } from '../services/aqmonitors_service.ts'
+
 declare var L:any;
 declare var Tangram:any;
 declare var window:any;
 
 @Component({
   selector: 'tangram-map',
+  providers: [AQMonitorsService],
   styles: [`
       #displayMap {
        height: 800px;  //needs to be set for initial map load
@@ -19,21 +21,31 @@ declare var window:any;
 })
 
 //@RequireUser()
-export class TangramMaps {
+export class TangramMaps implements OnInit {
   public mapHt:number;
   public tmap:any;
   public scene:any;
+  public aqmonitors:any;
 
-
-  constructor () {
+  constructor (private AQMonitorsService:AQMonitorsService) {
     this.mapHt = window.innerHeight;
-
   }
+  getAQMonitors () {
+    this.AQMonitorsService.getAQMonitors().then(aqmonitors => this.aqmonitors = aqmonitors);
+  }
+  // getHeroes() {
+  //   this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  // }
+  // ngOnInit() {
+  //   this.getHeroes();
+  // }
   ngOnInit() {
      this.makeMap();
      let settings = this.getDefaultSettings().configsettings;
      this.addTangram(settings);
      this.setMap(29.7604,-95.3698,11);
+     this.getAQMonitors();
+     console.log(this.aqmonitors)
   }
   //should be return <Object?
   //mongodb doesn't save fields that begin with $, so have to clean to and from database
