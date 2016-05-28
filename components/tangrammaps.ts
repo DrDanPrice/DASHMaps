@@ -68,7 +68,7 @@ var geoJSONVersion = {"type": "Feature",
     }
 
     return featGeoJSON
-    }
+  }
 
   // getHeroes() {
   //   this.heroService.getHeroes().then(heroes => this.heroes = heroes);
@@ -82,7 +82,6 @@ var geoJSONVersion = {"type": "Feature",
      this.addTangram(settings);
      this.setMap(29.7604,-95.3698,11);
      this.getAQMonitors();
-     console.log(this.aqmonitors)
   }
   //should be return <Object?
   //mongodb doesn't save fields that begin with $, so have to clean to and from database

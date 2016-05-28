@@ -1,8 +1,7 @@
 <!--should only have the main wrapper html, with logic coming from directives (like tangram-map) or routerLink-->
 <div (click)="$event.preventDefault()">
-  <tangram-map></tangram-map>
-
-<div class="btn-group" style="position:absolute;top:0px;">
+<tangram-map></tangram-map>
+ <div class="btn-group" style="position:absolute;top:0px;z-index:10000;">
   <button type="button" class="btn btn-secondary">
    <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
      <a href id="left-dropdown" dropdownToggle>
