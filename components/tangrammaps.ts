@@ -27,7 +27,7 @@ export class TangramMaps implements OnInit {
   public scene:any;
   public aqmonitors:any;
 
-  constructor (private AQMonitorsService:AQMonitorsService) {
+  constructor (@Inject(AQMonitorsService) private AQMonitorsService:AQMonitorsService) {
     this.mapHt = window.innerHeight;
   }
   getAQMonitors () {
