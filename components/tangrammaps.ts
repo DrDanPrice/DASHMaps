@@ -82,6 +82,20 @@ var geoJSONVersion = {"type": "Feature",
      this.addTangram(settings);
      this.setMap(29.7604,-95.3698,11);
      this.getAQMonitors();
+     let self = this;
+     this.tmap.on('click', function(e) {
+       console.log(e.latlng)
+       let feature = self.scene.getFeatureAt({x:e.latlng.lng,y:e.latlng.lat});
+       //let feature = self.scene.getFeatureAt(e.latlng);
+       feature.then(a => {
+         console.log(a)
+       });
+        // var popLocation= e.latlng;
+        // var popup = L.popup()
+        // .setLatLng(popLocation)
+        // .setContent('<p><br />This is a nice popup.</p>')
+        // .openOn(this.tmap);
+    });
   }
   //should be return <Object?
   //mongodb doesn't save fields that begin with $, so have to clean to and from database
@@ -225,7 +239,7 @@ getDefaultSettings = function(){return {
 		        "polygons": {
 		          "order": 12,
 		          "color": "#3d8ca3",
-                  "interactive": true
+              "interactive": true
 		        }
 		      }
 		    },
