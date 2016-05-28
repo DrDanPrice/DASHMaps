@@ -37,11 +37,39 @@ export class TangramMaps implements OnInit {
   }
   processMonitors (aqmonitors){
     this.aqmonitors = aqmonitors
-    aqmonitors.forEach(function(e){
-      console.log(e)
-    })
-    console.log(aqmonitors)
+    let feats = this.runData(aqmonitors);
+    this.scene.setDataSource('mongodb', {type:'GeoJSON',layer_name: "waterdb", data: feats})
+    //  aqmonitors.forEach(function(e){
+    //    let feat = this.runData(e);
+    //    this.scene.setDataSource('mongodb', {type:'GeoJSON',layer_name: "waterdb", data: feat})
+    // //   //console.log(e)
+    //  })
+    //console.log(aqmonitors)
   }
+  runData = function(body){
+        var featList = [];
+			body.forEach(function(m){
+                    if (m.loc){
+                //if m.type!=feature, etc.?
+//geoJSONVersion should be something universal???
+var geoJSONVersion = {"type": "Feature",
+    //"id":m._id, //don't know what's going on with the id - defined after this; get undefined whether I have this or not
+
+    "properties": m,
+            "geometry": {"type":"Polygon",
+"coordinates":[[[m.loc.coordinates[0]+.01,m.loc.coordinates[1]+.01],[m.loc.coordinates[0]-.01,m.loc.coordinates[1]+.01],[m.loc.coordinates[0]+.01,m.loc.coordinates[1]-.01],[m.loc.coordinates[0]+.01,m.loc.coordinates[1]+.01]]]}}
+        featList.push(geoJSONVersion)}
+                //this.scene.setDataSource('mongodb', {type:'GeoJSON',layer_name: "waterdb", name: "waterdb", data: geoJSONVersion})
+				});
+
+    var featGeoJSON = {
+        "type": "FeatureCollection",
+        "features": featList
+    }
+
+    return featGeoJSON
+    }
+
   // getHeroes() {
   //   this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   // }

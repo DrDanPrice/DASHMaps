@@ -8,6 +8,7 @@ import { MeteorComponent } from 'angular2-meteor';
 @Injectable()
 export class AQMonitorsService{//} extends MeteorComponent{
   monitors:Mongo.Cursor<Object>;
+  subs:any;
 
   constructor(zone:NgZone){
     //super();
@@ -19,10 +20,25 @@ export class AQMonitorsService{//} extends MeteorComponent{
   }
   getAQMonitors() {
 
-   let monitors = Monitors.find();
+   //let monitors = Monitors.find();
     // let numb = monitors.count();
-    return Promise.resolve(monitors);
-  }
+		let dbDataProm =  new Promise((resolve, reject) => {
+			let sub = Meteor.subscribe('monitors')
+        //    let data = self.subs.getMonitors().fetch();
+			Tracker.autorun(computation => {
+		        if (sub.ready()) {
+					computation.stop() //not sure if necessary for sub?
+					let data = Monitors.find().fetch();
+		            resolve(data)
+		        }
+			})
+		});
+    return dbDataProm;
+  //   dbDataProm.then((body) => {
+	// 		console.log('body',body)
+  //   //return Promise.resolve(monitors);
+  // })
+}
   // getHeroesSlowly() {
   //   return new Promise<Hero[]>(resolve =>
   //     setTimeout(()=>resolve(HEROES), 2000) // 2 seconds
