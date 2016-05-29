@@ -19,12 +19,8 @@ export class AQMonitorsService{//} extends MeteorComponent{
 		// }));
   }
   getAQMonitors() {
-
-   //let monitors = Monitors.find();
-    // let numb = monitors.count();
 		let dbDataProm =  new Promise((resolve, reject) => {
 			let sub = Meteor.subscribe('monitors')
-        //    let data = self.subs.getMonitors().fetch();
 			Tracker.autorun(computation => {
 		        if (sub.ready()) {
 					computation.stop() //not sure if necessary for sub?
@@ -38,6 +34,19 @@ export class AQMonitorsService{//} extends MeteorComponent{
 	// 		console.log('body',body)
   //   //return Promise.resolve(monitors);
   // })
+}
+getAQMonitorCursor() {
+  let dbDataCursor =  new Promise((resolve, reject) => {
+    let sub = Meteor.subscribe('monitors')
+    Tracker.autorun(computation => {
+          if (sub.ready()) {
+        computation.stop() //not sure if necessary for sub?
+        let data = Monitors.find();//.fetch();
+              resolve(data)
+          }
+    })
+  });
+  return dbDataCursor;
 }
   // getHeroesSlowly() {
   //   return new Promise<Hero[]>(resolve =>

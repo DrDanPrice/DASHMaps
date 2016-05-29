@@ -30,13 +30,29 @@ export class TangramMaps implements OnInit {
   constructor (@Inject(AQMonitorsService) private AQMonitorsService:AQMonitorsService) {
     this.mapHt = window.innerHeight;
   }
+  getAQMonitorCursor () {
+    let featList = [];
+    let aqmonitors = this.AQMonitorsService.getAQMonitorCursor();
+    aqmonitors.then(cursor => {
+      cursor.forEach(function(m){
+        if (m.loc){
+          let geoJSONVersion = {"type": "Feature",
+            "properties": m,
+            "geometry": {"type":"Polygon",
+            "coordinates":[[[m.loc.coordinates[0]+.01,m.loc.coordinates[1]+.01],[m.loc.coordinates[0]-.01,m.loc.coordinates[1]+.01],[m.loc.coordinates[0]+.01,m.loc.coordinates[1]-.01],[m.loc.coordinates[0]+.01,m.loc.coordinates[1]+.01]]]}}
+          featList.push(geoJSONVersion)
+          };
+      })
+  })
+}
+  //from fetch:
   getAQMonitors () {
     this.AQMonitorsService.getAQMonitors().then(aqmonitors =>
       this.processMonitors(aqmonitors)
     );
   }
   processMonitors (aqmonitors){
-    this.aqmonitors = aqmonitors
+    //this.aqmonitors = aqmonitors //add when doing filter
     let feats = this.runData(aqmonitors);
     this.scene.setDataSource('mongodb', {type:'GeoJSON',layer_name: "waterdb", data: feats})
     //  aqmonitors.forEach(function(e){
@@ -49,10 +65,10 @@ export class TangramMaps implements OnInit {
   runData = function(body){
         var featList = [];
 			body.forEach(function(m){
-                    if (m.loc){
+          if (m.loc){
                 //if m.type!=feature, etc.?
 //geoJSONVersion should be something universal???
-var geoJSONVersion = {"type": "Feature",
+let geoJSONVersion = {"type": "Feature",
     //"id":m._id, //don't know what's going on with the id - defined after this; get undefined whether I have this or not
 
     "properties": m,
@@ -82,20 +98,7 @@ var geoJSONVersion = {"type": "Feature",
      this.addTangram(settings);
      this.setMap(29.7604,-95.3698,11);
      this.getAQMonitors();
-     let self = this;
-     this.tmap.on('click', function(e) {
-       console.log(e.latlng)
-       let feature = self.scene.getFeatureAt({x:e.latlng.lng,y:e.latlng.lat});
-       //let feature = self.scene.getFeatureAt(e.latlng);
-       feature.then(a => {
-         console.log(a)
-       });
-        // var popLocation= e.latlng;
-        // var popup = L.popup()
-        // .setLatLng(popLocation)
-        // .setContent('<p><br />This is a nice popup.</p>')
-        // .openOn(this.tmap);
-    });
+     //this.getAQMonitorCursor();
   }
   //should be return <Object?
   //mongodb doesn't save fields that begin with $, so have to clean to and from database
@@ -111,8 +114,16 @@ var geoJSONVersion = {"type": "Feature",
 
   public addTangram (sceneYAML:any):void{
     //this.cleanMapSettings('fromdb')
+    //this may change how we do controllers: https://github.com/tangrams/tangram/pull/263
+    let funcself = this;
     let layer = Tangram.leafletLayer({
       scene: sceneYAML,
+      events: {
+        //hover: function(selection) { console.log('Hover!', selection); },
+        click: function(selection) {
+          funcself.detailDisplay(selection);
+        }
+      },
       //eventually attribution should be passed?
       attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a><a href="https://housuggest.org/DASH" target="_blank"> | DASH</a>'
     })
@@ -126,7 +137,12 @@ var geoJSONVersion = {"type": "Feature",
   public setMap (lat?:number, lng?:number, zoom?:number):void {  //eventually come from geolocation -- check typescript on Leaflet to make sure same type
 		this.tmap.setView([lat,lng],zoom);
   }
-
+  public detailDisplay(selection):void {
+    console.log('selection in func', selection) //.feature.properties.AQSID)
+    //try with one of the ones with POIS.  
+    //could have it go to that AQSID, or to _id for all the features
+    //could also try for a more general way of dealing with features.
+  }
   public origYAML(jsonobj:string):any {
     return JSON.parse(jsonobj) //or YAML.parse??)
   }
@@ -134,7 +150,7 @@ var geoJSONVersion = {"type": "Feature",
   public readYAML(yamlstr:string):any {
         //return Tangram.debug.yaml.safeLoad(rawyaml [json=true])
         return Tangram.debug.yaml.safeLoad(yamlstr)
-    }
+  }
 
 getDefaultSettings = function(){return {
     "stylename" : "default",
@@ -185,6 +201,7 @@ getDefaultSettings = function(){return {
                 }
             },
 		    "buildings": {
+          "interactive": true,
 		      "base": "polygons",
 		      "shaders": {
 		        "uniforms": {
@@ -199,6 +216,7 @@ getDefaultSettings = function(){return {
 		  },
 		  "layers": {
 		    "earth": {
+          "interactive": true,
 		      "data": {
                   "source": "osm"
 		      },
@@ -210,6 +228,7 @@ getDefaultSettings = function(){return {
 		      }
 		    },
 		    "landuse": {
+          "interactive": true,
 		      "data": {
 		        "source": "osm"
 		      },
@@ -221,6 +240,7 @@ getDefaultSettings = function(){return {
 		      }
 		    },
 		    "water": {
+          "interactive": true,
 		      "data": {
                   "source": "osm"
 		      },
