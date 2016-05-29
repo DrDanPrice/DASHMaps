@@ -5,13 +5,15 @@ import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../n
 import { AQMonitorsService } from '../services/aqmonitors_service.ts';
 import { CreateFeature } from './createfeature.ts';
 import { ManageFeatures } from './managefeatures.ts';
+import { LinkedQuestions } from './linkedquestions.ts';
 
 @Component({
   selector: 'feature-display',
   providers: [AQMonitorsService],
   directives: [
                 ROUTER_DIRECTIVES,
-                DROPDOWN_DIRECTIVES
+                DROPDOWN_DIRECTIVES,
+                LinkedQuestions
               ],
   templateUrl: 'client/templates/features.html'
 })
@@ -25,10 +27,14 @@ export class FeatureComponent implements OnActivate {
   monitor: any;
   feature: any;
   aqmonitors: any; // Mongo.Cursor<Object>;
+  properties: any;
+  title:string;
   constructor (
     @Inject(AQMonitorsService) private AQMonitorsService:AQMonitorsService,
-    private router: Router
-  ){}
+    private router: Router, private curr: RouteSegment
+  ){
+    this.title = curr.getParam('title');
+  }
 
   getAQMonitor (id):any {
     this.aqmonitors = this.AQMonitorsService.getAQMonitorCursor();
@@ -36,14 +42,19 @@ export class FeatureComponent implements OnActivate {
       this.monitor = cursor.findOne(id)
    )
  }
-
   routerOnActivate(curr: RouteSegment): void {
-    console.log('routerOnActivate')
-    //let id = +curr.getParam('id');
+    console.log('routerOnActivate',curr.getParam('title'))
+    this.title = curr.getParam('title');
+    this.properties = curr.getParam('properties');
+    //this.router.navigate(['/features', {title:this.title,properties:this.properties}]);
     //this.getAQMonitor(id).then(feature => this.feature = feature);
   }
-  gotoFeatures() {
+  gotoFeatures(properties) {
     // Like <a [routerLink]="['/heroes']">Heroes</a>
-    this.router.navigate(['/features']);
+    this.router.navigate(['/features', {title:'from gotoFeatures',properties:properties}]);
+  }
+  ngOnInit() {
+    console.log('oninit fired in features.ts')
+    //this.router.navigate(['/features', {title:this.title,properties:this.properties}]);
   }
 }

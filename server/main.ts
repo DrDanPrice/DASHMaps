@@ -14,7 +14,6 @@ import '../collections/methods';
     	return Collects.find({});
 	});
 	Meteor.publish('monitors',function(query){ //query is already an object
-		console.log('does a blnk query come through?',query)
         //this.ready(); //
     	return Monitors.find({query});
 	});

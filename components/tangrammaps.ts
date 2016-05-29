@@ -1,5 +1,6 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
 import { Component, OnInit, ChangeDetectionStrategy, Inject, Injectable, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { AQMonitorsService } from '../services/aqmonitors_service.ts';
 
 declare var L:any;
@@ -27,7 +28,7 @@ export class TangramMaps implements OnInit {
   public scene:any;
   public aqmonitors:any;
 
-  constructor (@Inject(AQMonitorsService) private AQMonitorsService:AQMonitorsService) {
+  constructor (@Inject(AQMonitorsService) private AQMonitorsService: AQMonitorsService, private router: Router) {
     this.mapHt = window.innerHeight;
   }
   getAQMonitorCursor () {
@@ -139,6 +140,7 @@ let geoJSONVersion = {"type": "Feature",
   }
   public detailDisplay(selection):void {
     console.log('selection in func', selection) //.feature.properties.AQSID)
+    this.router.navigate(['/features', {title:'from tangrammaps.ts',properties:selection}]);
     //try with one of the ones with POIS.
     //could have it go to that AQSID, or to _id for all the features
     //could also try for a more general way of dealing with features.

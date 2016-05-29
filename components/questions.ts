@@ -21,12 +21,12 @@ import { QuestionsManager } from './managedquestions.ts';
 ])
 //@RequireUser()
 //should do this as implementing OnActivate from router?? vgl features.ts
-export class QuestionsComponent {
+export class QuestionsComponent implements OnInit {
   constructor(private router: Router) {
 
     }
     ngOnInit() {
-      this.router.navigate(['/questions/linkedquestions']);
+      this.router.navigate(['/questions']);
     }
 
 }

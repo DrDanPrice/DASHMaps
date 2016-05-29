@@ -76,6 +76,7 @@ constructor(private router: Router) {
   }
 
   ngOnInit() {
+    console.log('oninit fired in app.ts')
      this.router.navigate(['/']);
   }
 
