@@ -44,7 +44,7 @@ export class TangramMaps implements OnInit {
           };
       })
   })
-}
+ }
   //from fetch:
   getAQMonitors () {
     this.AQMonitorsService.getAQMonitors().then(aqmonitors =>
@@ -139,7 +139,7 @@ let geoJSONVersion = {"type": "Feature",
   }
   public detailDisplay(selection):void {
     console.log('selection in func', selection) //.feature.properties.AQSID)
-    //try with one of the ones with POIS.  
+    //try with one of the ones with POIS.
     //could have it go to that AQSID, or to _id for all the features
     //could also try for a more general way of dealing with features.
   }

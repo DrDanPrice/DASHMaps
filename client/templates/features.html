@@ -1,2 +1,23 @@
+<div style="position:absolute;top:0px;left:50%;width:50%;z-index:1000;background-color:white;">
 <h1>Features</h1>
-<p>Should have this route by featureid - with some tie in to questions</p>
+
+<p>Should have this route by featureid - with some tie in to questions
+Figure out how to get columns in Bootstrap4; show up on right side?
+Click displays, with id selecting that individual
+Two buttons - one for creating a feature; one for manage_features;
+search should already be in this version.
+</p>
+
+<div (click)="$event.preventDefault()">
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary">
+      <a [routerLink]="['/features/createfeature']">New</a>
+    </button>
+    <button type="button" class="btn btn-secondary">
+      <a [routerLink]="['/features/managefeatures']">Manage</a>
+    </button>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+</div>

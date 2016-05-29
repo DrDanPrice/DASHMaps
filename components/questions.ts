@@ -20,9 +20,11 @@ import { QuestionsManager } from './managedquestions.ts';
     { path: '/linkedquestions', component: LinkedQuestions }
 ])
 //@RequireUser()
+//should do this as implementing OnActivate from router?? vgl features.ts
 export class QuestionsComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
 
+    }
     ngOnInit() {
       this.router.navigate(['/questions/linkedquestions']);
     }

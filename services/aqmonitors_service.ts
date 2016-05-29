@@ -11,6 +11,10 @@ export class AQMonitorsService{//} extends MeteorComponent{
   subs:any;
 
   constructor(zone:NgZone){
+    //I could not get it to work as extending MeteorComponent;
+    //the error seemed to be related to library calls, which were solved by
+    //putting in more recent versions of files in angular2-meteor,
+    //but it kept introducing new problems - might try again after his update to npm
     //super();
     // Tracker.autorun(() => zone.run(() => {
 		// this.subscribe('monitors', () => {
@@ -30,10 +34,6 @@ export class AQMonitorsService{//} extends MeteorComponent{
 			})
 		});
     return dbDataProm;
-  //   dbDataProm.then((body) => {
-	// 		console.log('body',body)
-  //   //return Promise.resolve(monitors);
-  // })
 }
 getAQMonitorCursor() {
   let dbDataCursor =  new Promise((resolve, reject) => {
