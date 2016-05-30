@@ -60,7 +60,7 @@ export class TangramMaps implements OnInit {
   processMonitors (aqmonitors){
     //this.aqmonitors = aqmonitors //add when doing filter
     let feats = this.runData(aqmonitors);
-    this.scene.setDataSource('mongodb', {type:'GeoJSON',layer_name: "waterdb", data: feats})
+    this.scene.setDataSource('mongodb', {type:'GeoJSON',layer_name: "aqmonitors", data: feats})
   }
   runData = function(body){
         var featList = [];
@@ -87,19 +87,12 @@ let geoJSONVersion = {"type": "Feature",
   }
   getSettings () {
     this.MapStyleService.getDefaultSettings().then(mapsettings => {
-      //console.log(mapsettings)
       this.addTangram(mapsettings.configsettings);
-      //let settings = mapsettings.configsettings
-    }
-    );
-    //
+    });
   }
   ngOnInit() {
      this.makeMap();
-     let testthis = this.getSettings();
-     //this.settings = this.getSettings();
-    //  this.settings = this.MapStyleService.makeDefaultSettings().configsettings;
-    //  this.addTangram(this.settings);
+     this.getSettings();
      this.setMap(29.7604,-95.3698,11);
      this.getAQMonitors();
      //this.getAQMonitorCursor();

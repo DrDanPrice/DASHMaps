@@ -67,7 +67,9 @@ public getDefaultSettings () {
   })
   return defaultSettings;
 }
-
+//get from db - or rather, from router/url to db - so only if
+//find gives you count()=0
+//then have one that is the added for the database that is being used
 public makeDefaultSettings ():any {
   return {
     "stylename" : "default",
@@ -81,20 +83,17 @@ public makeDefaultSettings ():any {
 		  "cameras": {
             "camera1": {
                 "type": "perspective",
-            "vanishing_point": [
-                -0.15,
-                -0.75
-            ]
-                        },
+                "vanishing_point": [
+                  -0.15,
+                  -0.75
+                ]
+            },
             "camera2": {
                 "type": "isometric",
-            "axis": [
-                0,
-                1
-                ],
+                "axis": [0,1],
                 "active": true
             }
-                    },
+      },
 		  "lights": {
 		    "light1": {
 		      "type": "directional",
@@ -106,17 +105,9 @@ public makeDefaultSettings ():any {
 		    "osm": {
 		      "type": "TopoJSON",
 		      "url": "http://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-f7STaq0"
-			}
+			  }
 		  },
 		  "styles": {
-            "waterdb": {
-              "base": "polygons",
-              "shaders": {
-                  "blocks":{
-                    "position":
-                        "vec3 pos = worldPosition().xyz*10;if(position.z > 0.){position.xyz += vec3(cos(pos.x+u_time)*5.,sin(pos.y+u_time)*5.,sin(pos.x+u_time)*10.+cos(pos.y+u_time)*5. );}"}
-                }
-            },
 		    "buildings": {
           "interactive": true,
 		      "base": "polygons",
@@ -168,48 +159,9 @@ public makeDefaultSettings ():any {
 		        }
 		      }
 		    },
-            "waterdb": {
-		      "data": {
-		        "source": "mongodb"
-		      },
-		      "draw": {
-		        "polygons": {
-		          "order": 12,
-		          "color": "#3d8ca3",
-              "interactive": true
-		        }
-		      }
-		    },
-        "ownfeatures": {
-          "data": {
-            "source": "mongodb"
-          },
-          "draw": {
-            "polygons": {
-              "order": 12,
-              "color": "#3d8ca3",
-                  "interactive": true
-            }
-          }
-        },
 		    "roads": {
 		      "data": {
 		        "source": "osm"
-		      },
-		      "properties": {
-		        "width": 3
-		      },
-		      "draw": {
-		        "lines": {
-		          "order": 3,
-		          "color": "#050505",
-		          "width": 3
-		        }
-		      }
-		    },
-		    "otherpolys": {
-		      "data": {
-		        "source": "osm2"
 		      },
 		      "properties": {
 		        "width": 3
@@ -233,9 +185,26 @@ public makeDefaultSettings ():any {
   		          "width": 3
   		        }
   		      }
-  		    }
-		  }
+  		  },
+        "aqmonitors": {
+          "data": {
+		        "source": "mongodb"
+		      },
+  		      "draw": {
+  		        "lines": {
+  		          "order": 2,
+  		          "color": "orange",
+  		          "width": 3
+  		        },
+              "polygons": {
+		          "order": 12,
+		          "color": "#FF00FF",
+                  "interactive": true
+		          }
+  		      }
+        }
+		    }
     	}
-	}
-    }
+	  }
+  }
 }
