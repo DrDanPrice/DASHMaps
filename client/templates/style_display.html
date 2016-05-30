@@ -1,3 +1,128 @@
 <div style="position:absolute;top:0px;left:50%;width:50%;z-index:1000;background-color:white;">
-<h1>StyleDisplay</h1><h1>StyleDisplay</h1><h1>StyleDisplay</h1><h1>StyleDisplay</h1><h1>StyleDisplay</h1><h1>StyleDisplay</h1>
+<h1>StyleDisplay</h1>
+<form [ngFormModel]="configSetCtrl">
+  <div class="form-group" NgControlGroup="metadata">
+  </div>
+  <div class="btn btn-primary" (click)="saveMapstyle()">Save Mapstyle</div>
+  <div class="btn btn-primary" (click)="removeMapstyle()">Delete Mapstyle</div>
+  <br>
+  <label for="stylename">Mapstyle Name</label>
+	<input type="text" class="form-control"
+    id="stylename"
+    #msname [(value)]=mapstyle.stylename
+    (keyup)='mapstyle.stylename=msname.value'
+    (focus)='showInputs=true'/>
+  <label for="styleowner">Mapstyle Owner</label>
+	<input type="text" class="form-control"
+    id="styleowner"
+    #msowner [(value)]=mapstyle.owner
+    (keyup)='mapstyle.owner=msowner.value'/>
+  <label for="uploadstyle">Upload YAML/JSON</label>
+  <input type="file" class="form-control"
+    id="uploadstyle"
+    (change)="fileChangeEvent($event)"  />
+  <label for="styledescription">Mapstyle Description</label>
+  <textarea type="textarea" cols="50" rows="4" class="form-control"
+    id="styledescription"
+    #msdescription [(value)]=mapstyle.description
+    (keyup)='mapstyle.description=msdescription.value'>
+  </textarea>
+  <label for="styleattribution">Mapstyle Attribution</label>
+  <textarea cols="50" rows="2" class="form-control"
+    id="styleattribution"
+    #msattribution [(value)]=mapstyle.attribution
+    (keyup)='mapstyle.attribution=msattribution.value'>
+  </textarea>
+</form>
+
+{{mapstyle | json}}
+{{test}}
+
+<p>
+Should have pull-down to choose different mapstyles_service
+(bootstrap dropdown?)
+have mapstyles and layerstyles separate - so when you add a style that doesn't have
+any customslayers, it still works - for saving a custommapstyle, it would have both?
+</p>
 </div>
+
+
+<!--
+<form>
+  <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+  </div>
+  <button type="submit" class="btn btn-primary">Send invitation</button>
+</form>
+        <div ngControlGroup="name">
+          <h3>Enter your name:</h3>
+          <p>First: <input ngControl="first"><span *ngIf="!ctrlFirst.valid"> [required]</span></p>
+          <p>Middle: <input ngControl="middle"></p>
+            <p>Last: <input ngControl="last"><span *ngIf="!ctrlLast.valid"> [required]</span></p>
+        </div>
+        <h3>What's your favorite food?</h3>
+        <p><input ngControl="food"><span *ngIf="!ctrlFood.valid"> [required]</span></p>
+        <h3>Name a few cities:</h3>
+        <ul ngControlGroup="cities">
+          <li *ngFor="#ctrl of ctrlCities; #i = index"><input ngControl="{{i}}"></li>
+        </ul>
+        <button type="button" (click)="addCity()">Add a city</button>
+      </form>
+      <h3>Value:</h3>
+      <pre>{{cgValue}}</pre>
+      <h3>Validity:</h3>
+      <pre>{{formGroup.valid}}</pre>
+-->
+
+                <!-- <div class="ui button" (click)="showInputs=!showInputs">Mapstyles</div>
+	               <select id={{target}} class="ui dropdown" (change)=updateSettings($event.target.value)>
+		              <option *ngFor="#o of opts" [value]="o.mapstyle.name">{{o.mapstyle.name}}</option>
+	               </select>
+
+				<div [hidden]="!showInputs" class="ui form">
+                    <div class="ui button" (click)="saveMapstyle()">Save Mapstyle</div>
+                    <div class="ui button" (click)="removeMapstyle()">Delete Mapstyle</div>
+
+                    <div class="three fields">
+
+
+                        <div class="field">
+
+                    <label>Mapstyle Name</label>
+				    <input type="text" #msname [(value)]=mapstyle.name (keyup)='mapstyle.name=msname.value' (focus)='showInputs=true'/>
+                        </div>
+                        <div class="field">
+                    <label>Mapstyle Owner</label>
+					<input type="text" #msowner [(value)]=mapstyle.owner (keyup)='mapstyle.owner=msowner.value'/>
+                        </div>
+
+                        <div class="field">
+                            <label>Upload YAML/JSON</label>
+                    <input type="file" (change)="fileChangeEvent($event)"  />
+                        </div>
+                    </div>
+                    <div class="field">
+                    <label>Mapstyle Description</label>
+                        <textarea type="textarea" cols="50" rows="4" #msdescription [(value)]=mapstyle.description (keyup)='mapstyle.description=msdescription.value'></textarea>
+                    </div>
+                    <div class="field">
+                    <label>Mapstyle Attribution</label>
+                        <textarea cols="50" rows="2" #msattribution [(value)]=mapstyle.attribution (keyup)='mapstyle.attribution=msattribution.value'></textarea>
+                    </div>
+				</div>
+
+			<p> a particular view and settings can be shared via link; maybe as router params?</p>
+			</div>
+    		<div class="tabs" [(colnum)]="numcol" menucolor="red" cssposition="absolute">
+    			<div class="tab" *ngFor="#i=index; #ctrlobj of mapsets | values" [tabTitle]=ctrlobj>
+					this is top level ctrlobj: {{ctrlobj}}
+					<div class="unpack" *ngFor="#obj of mapsets[ctrlobj] | values" [crumb]=ctrlobj [obj2unpack]=mapsets[ctrlobj][obj] [crumb2]=obj>
+						{{obj}}
+					</div>
+    			</div>
+    		</div>  -->

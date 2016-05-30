@@ -1,6 +1,6 @@
 import {Mapstyles, Collects, Monitors, Features, Grids} from '../collections/collects';
 
-import '../collections/methods';
+import '../services/methods';
 
 
 

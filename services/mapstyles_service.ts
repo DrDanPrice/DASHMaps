@@ -58,14 +58,35 @@ public readYAML(yamlstr:string):any {
       //return Tangram.debug.yaml.safeLoad(rawyaml [json=true])
     //  return Tangram.debug.yaml.safeLoad(yamlstr)
 }
+public saveMapStyle(mapstyle:any):void{
+  //or do on styledisplay??
+  //have it save in same collection,
+  //"collectiontype" : "fullmap" for whole;
+  //layer, lights, etc., also saved as file - with some connection?
+  //have to think through how to mix/match from mainstyles??
+}
 
 //perhaps it has to return a promise!!!!
 public getDefaultSettings () {
   let defaultSettings = new Promise ((resolve, reject) => {
     let settings = this.makeDefaultSettings();
+    let customsets = this.addCustomLayers();
+    let settingself = this;
+    customsets.forEach(function(setting){
+      if (!settings.configsettings.layers[setting]){
+        settings.configsettings.layers[setting] = settingself.makeLayerSettings();
+      }
+    })
+    //settings.configsettings.layers['aqmonitors'] = this.makeLayerSettings();
     resolve(settings)
   })
   return defaultSettings;
+}
+//customLayers is its own collection? or a search on the Mapstyles?
+//if part of mapstyles, then need the router to carry that info
+public addCustomLayers () {
+  //should return a collection, having to do with what data has been added
+  return [ 'aqmonitors', 'gardens' ];
 }
 //get from db - or rather, from router/url to db - so only if
 //find gives you count()=0
@@ -76,6 +97,7 @@ public makeDefaultSettings ():any {
     "owner" : "Dan Price/DASH",
     "attribution" : "Mapzen",
     "creationdate" : "epoch of some sort",
+    "collectiontype" : "fullmap",
     "configsettings" : {
 		  "scene": {
 		  	"background":{color:"white"},
@@ -185,26 +207,29 @@ public makeDefaultSettings ():any {
   		          "width": 3
   		        }
   		      }
-  		  },
-        "aqmonitors": {
-          "data": {
-		        "source": "mongodb"
-		      },
-  		      "draw": {
-  		        "lines": {
-  		          "order": 2,
-  		          "color": "orange",
-  		          "width": 3
-  		        },
-              "polygons": {
-		          "order": 12,
-		          "color": "#FF00FF",
-                  "interactive": true
-		          }
-  		      }
-        }
+  		  }
 		    }
     	}
 	  }
   }
+  public makeLayerSettings ():any {
+    return {
+      "data": {
+        "source": "mongodb"
+      },
+        "draw": {
+          "lines": {
+            "order": 2,
+            "color": "orange",
+            "width": 3
+          },
+          "polygons": {
+          "order": 12,
+          "color": "#FF00FF",
+              "interactive": true
+          }
+        }
+    }
+  }
+
 }

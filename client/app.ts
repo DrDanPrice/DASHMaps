@@ -37,6 +37,7 @@ import { FeatureComponent } from '../components/features.ts';
     { path: '/styles', component: StyleComponent },
     { path: '/questions', component: QuestionsComponent },
     //https://angular.io/docs/ts/latest/guide/router.html
+    //http://plnkr.co/edit/Bim8OGO7oddxBaa26WzR?p=preview - for nice examples of each strategy
     { path: '/features', component: FeatureComponent }
     //{ path: '/features/:featureID', component: FeatureComponent } // I don't think it needs this, but haven't tested
 ])
