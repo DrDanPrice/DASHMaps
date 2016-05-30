@@ -41,8 +41,8 @@ getAQMonitorCursor() {
     Tracker.autorun(computation => {
           if (sub.ready()) {
         computation.stop() //not sure if necessary for sub?
-        let data = Monitors.find();//.fetch();
-              resolve(data)
+        let cursor = Monitors.find();//.fetch();
+              resolve(cursor)
           }
     })
   });

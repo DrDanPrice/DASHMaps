@@ -7,4 +7,6 @@ import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/cor
 })
 
 //@RequireUser()
-export class StyleComponent { }
+export class StyleComponent {
+
+}
