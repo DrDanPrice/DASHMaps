@@ -8,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/cor
 })
 
 //@RequireUser()
-export class CreateFeature implements OnActivate {
+export class CreateFeature implements OnActivate, CanDeactivate {
   constructor (
     private router: Router
   ){
