@@ -32,6 +32,7 @@ export class FeatureComponent implements OnActivate {
   aqmonitors: any; // Mongo.Cursor<Object>;
   featureproperties: any;
   title:string;
+  instruction:any;
   constructor (
     @Inject(AQMonitorsService) private AQMonitorsService:AQMonitorsService,
     private FileUploadService:FileUploadService,

@@ -27,6 +27,7 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
 
   //  super()
   }
+
   routerOnActivate(curr: RouteSegment): void {
     console.log('routerOnActivate in styledisplay',curr)
     //this.test = curr.getParam('test');

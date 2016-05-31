@@ -3,8 +3,8 @@ import { Monitors } from '../collections/collects';
 import { Mongo }     from 'meteor/mongo';
 import { MeteorComponent } from 'angular2-meteor';
 
-//mock a promise return first
-//then build it up
+//http://blog.angular-academy.io/how-to-build-angular2-apps-using-rxjs-observable-data-services-pitfalls-to-avoid/
+//here, I just use a promise, since Meteor is already doing the reactivity, but should explore.
 @Injectable()
 export class AQMonitorsService{//} extends MeteorComponent{
   monitors:Mongo.Cursor<Object>;
@@ -26,11 +26,11 @@ export class AQMonitorsService{//} extends MeteorComponent{
 		let dbDataProm =  new Promise((resolve, reject) => {
 			let sub = Meteor.subscribe('monitors')
 			Tracker.autorun(computation => {
-		        if (sub.ready()) {
+		    if (sub.ready()) {
 					computation.stop() //not sure if necessary for sub?
 					let data = Monitors.find().fetch();
-		            resolve(data)
-		        }
+		      resolve(data)
+		    }
 			})
 		});
     return dbDataProm;
