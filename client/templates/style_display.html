@@ -6,27 +6,34 @@
   <div class="btn btn-primary" (click)="saveMapstyle()">Save Mapstyle</div>
   <div class="btn btn-primary" (click)="removeMapstyle()">Delete Mapstyle</div>
   <br>
+  <label for="uploadstyle">Upload YAML/JSON</label>
+  <input type="file" class="form-control"
+    id="uploadstyle"
+    (change)="fileChangeEvent($event)"  />
+  <br>
+  <!--pull down select on existing mapstyles - then data and layer settings, etc.
+  <select -->
+
   <label for="stylename">Mapstyle Name</label>
 	<input type="text" class="form-control"
     id="stylename"
     #msname [(value)]=mapstyle.stylename
     (keyup)='mapstyle.stylename=msname.value'
     (focus)='showInputs=true'/>
+
   <label for="styleowner">Mapstyle Owner</label>
 	<input type="text" class="form-control"
     id="styleowner"
     #msowner [(value)]=mapstyle.owner
     (keyup)='mapstyle.owner=msowner.value'/>
-  <label for="uploadstyle">Upload YAML/JSON</label>
-  <input type="file" class="form-control"
-    id="uploadstyle"
-    (change)="fileChangeEvent($event)"  />
+
   <label for="styledescription">Mapstyle Description</label>
   <textarea type="textarea" cols="50" rows="4" class="form-control"
     id="styledescription"
     #msdescription [(value)]=mapstyle.description
     (keyup)='mapstyle.description=msdescription.value'>
   </textarea>
+
   <label for="styleattribution">Mapstyle Attribution</label>
   <textarea cols="50" rows="2" class="form-control"
     id="styleattribution"

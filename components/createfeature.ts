@@ -1,4 +1,14 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
+//needs to have a state? or when you click, it takes you to a feature if it's there, or offers to create new
+//when it's create new, then it gives you a drawing canvas - draw on map, just no background;
+//draw on canvas, white background - anchored to a Point
+//can it be anchored to an idea? why not?
+//just have it be attachable to the other types - questions/themes?
+//attach new feature to same point/theme should also be possible; they then show
+//up as "linked" features in the same way as linked questions/features.
+//links should have their own component?  
+
+
 import { OnActivate, CanDeactivate, Router, RouteSegment } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
 
@@ -20,7 +30,7 @@ export class CreateFeature implements OnActivate, CanDeactivate {
     //this.getAQMonitor(id).then(feature => this.feature = feature);
   }
   routerCanDeactivate(): any {
-    console.log('routerCanDeactivate in createfeature')
+    console.log('routerCanDeactivate in createfeature; test for save state')
     return confirm('are you sure?');
     // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged.
     // if (!this.crisis || this.crisis.name === this.editName) {

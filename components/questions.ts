@@ -3,8 +3,8 @@ import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/cor
 import { CORE_DIRECTIVES } from '@angular/common';
 import { Routes, Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../node_modules/ng2-bootstrap';
-import { LinkedQuestions } from './linkedquestions.ts';
 import { QuestionsManager } from './managedquestions.ts';
+import { QuestionsTable } from './questionstable.ts';
 
 @Component({
   selector: 'questions-display',
@@ -17,7 +17,7 @@ import { QuestionsManager } from './managedquestions.ts';
 })
 @Routes([
     { path: '/managedquestions', component: QuestionsManager },
-    { path: '/linkedquestions', component: LinkedQuestions }
+    { path: '/table', component: QuestionsTable }
 ])
 //@RequireUser()
 //should do this as implementing OnActivate from router?? vgl features.ts

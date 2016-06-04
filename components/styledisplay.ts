@@ -2,6 +2,7 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, NgZone, Inject, Injectable } from '@angular/core';
 import { FORM_DIRECTIVES, Control, ControlGroup, ControlArray, Validators, NgIf, NgFor, NgClass } from '@angular/common';
 import { OnActivate, Routes, Router, RouteSegment, ROUTER_DIRECTIVES } from '@angular/router';
+import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../node_modules/ng2-bootstrap';
 import { MeteorComponent } from 'angular2-meteor';
 import { DASHValidator } from './dashvalidators.ts';
 import { FileUploadService } from '../services/fileupload_service.ts';
@@ -29,11 +30,12 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
   }
 
   routerOnActivate(curr: RouteSegment): void {
-    console.log('routerOnActivate in styledisplay',curr)
+    console.log('routerOnActivate getParam() in styledisplay',curr.getParam('mapID'))
     //this.test = curr.getParam('test');
     //this.mapstyle = curr.getParam('mapstyle');
     this.MapStyleService.getDefaultSettings().then(mapstyle => {
-      this.mapstyle = mapstyle;
+      this.mapstyle = mapstyle; //have to load it into the control to show up
+      console.log('mapstyle delivered')
     });
     //this.router.navigate(['/styles']);
     //this.router.navigate(['/features', {title:this.title,properties:this.properties}]);

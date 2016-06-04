@@ -4,40 +4,50 @@
 //can this be made to work for multiple services?
 //doing for mapstyles, first
 import { Injectable } from "@angular/core";
-//import {TodoBackendService} from "../TodoBackendService";
 import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
-//import {Todo} from "../Todo";
 //import {List} from 'immutable'; //http://blog.scottlogic.com/2016/01/05/angular2-with-immutablejs.html
 //should do a ChangeDetectionStrategy of push?
 //separate this from the service so that it maintains direction of push and immutability
 import { BehaviorSubject } from "rxjs/Rx";
 import { MapStyleService } from './mapstyles_service';
+import { MapStyle } from './mapstyle_class';
 
 @Injectable()
 export class ObservableStore {
     private _mapsetting: BehaviorSubject<Array<string>> = new BehaviorSubject([]);
-    //public MapStyle:<Object[]> = MapStyleService.MapStyle;
-    //public MapSetting:any = MapStyleService.getMapSetting;
 
     constructor(private MapStyleService: MapStyleService) {
         this.loadSetting();
+        this.loadCustomBlocks();
+        this.loadSelectedFeatures();
     }
 
     loadSetting() {
-        this.todoBackendService.getAllTodos()
+        this.MapStyleService.getMapSetting('default')
             .subscribe(
                 res => {
-                    let mapsetting = (<Object[]>res.json()).map((setting: any) =>
-                        new MapStyle({id:setting.id,
-                          description:setting.description,
-                          state: setting.state,
-                          configsettings : setting.configsettings}));
-                    this._mapsetting.next(mapsetting);
+                  let settingself = this;
+                  let mapsetting = (<Object[]>res.json()).map((setting: any) =>
+                  // layerlist.forEach(function(layer){
+                  //   if (!setting.configsettings.layers[layer]){
+                  //     setting.configsettings.layers[layer] = settingself.makeLayerSettings();
+                  //   }
+                  // })
+                  new MapStyle({id:setting.id,
+                    description:setting.description,
+                    state: setting.state,
+                    configsettings : setting.configsettings})); //can you make this a function???
+                  this._mapsetting.next(mapsetting);
                 },
                 err => console.log("Error retrieving mapsettings")
             );
-
+    }
+    //can I make this more general for textures, blocks, etc.??
+    public blocklist = []; //can I make it do a forEach key at every level of the mapstyle_class?
+    public makeLayerSettings ():any {
+      let tmpset = new MapStyle;
+      return tmpset.configsettings.layers['default'];
     }
 
     addTodo(newTodo:Todo):Observable {

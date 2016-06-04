@@ -5,17 +5,19 @@ import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/cor
 import { CORE_DIRECTIVES } from '@angular/common';
 import { InjectUser, LoginButtons } from 'angular2-meteor-accounts-ui';
 import { MeteorComponent } from 'angular2-meteor';
-import { Routes, Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 
 //components here - for Meteor, they need to load from folder at higher level!
 import { TangramMaps } from '../components/tangrammaps.ts';
 import { AboutComponent } from '../components/aboutdisplay.ts';
 import { WelcomeComponent } from '../components/welcome.ts';
+import { MapComponent } from '../components/map.ts';
 import { UserComponent } from '../components/userdisplay.ts';
 import { DataComponent } from '../components/datadisplay.ts';
 import { StyleComponent } from '../components/styledisplay.ts';
 import { QuestionsComponent } from '../components/questions.ts';
 import { FeatureComponent } from '../components/features.ts';
+import { LinkedComponent } from '../components/linked.ts';
 
 @Component({
   selector: 'app',
@@ -29,10 +31,16 @@ import { FeatureComponent } from '../components/features.ts';
                 TangramMaps
               ]
 })
+//it seems to work better if you don't set up the params in the url here, although you can
+//still pass them in that way: localhost:3000/;mapID=fasddsf, etc.
+//right now, map.ts deals with those routerlike issues
 @Routes([
-    { path: '/', component: WelcomeComponent },
+    { path: '/welcome', component: WelcomeComponent },
+    { path: '/', component: MapComponent },
+    //{ path: '/map/:mapID', component: MapComponent },
     { path: '/about', component: AboutComponent },
     { path: '/data', component: DataComponent },
+    { path: '/linked', component: LinkedComponent },
     { path: '/userdisplay', component: UserComponent },
     { path: '/styles', component: StyleComponent },
     { path: '/questions', component: QuestionsComponent },
@@ -44,6 +52,7 @@ import { FeatureComponent } from '../components/features.ts';
 @InjectUser()
 export class DASHMaps extends MeteorComponent implements OnInit {
   user: Meteor.User;
+  test: string;
 
 constructor(private router: Router) {
   //constructor() {

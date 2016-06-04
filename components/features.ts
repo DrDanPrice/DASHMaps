@@ -8,7 +8,7 @@ import { FileUploadService } from '../services/fileupload_service.ts';
 import { DASHValidator } from './dashvalidators.ts';
 import { CreateFeature } from './createfeature.ts';
 import { ManageFeatures } from './managefeatures.ts';
-import { LinkedQuestions } from './linkedquestions.ts';
+import { LinkedComponent } from './linked.ts';
 
 @Component({
   selector: 'feature-display',
@@ -16,7 +16,7 @@ import { LinkedQuestions } from './linkedquestions.ts';
   directives: [
                 ROUTER_DIRECTIVES,
                 DROPDOWN_DIRECTIVES,
-                LinkedQuestions
+                LinkedComponent
               ],
   templateUrl: 'client/templates/features.html'
 })

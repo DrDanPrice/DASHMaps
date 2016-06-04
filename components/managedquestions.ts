@@ -1,5 +1,5 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
-import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'managed-questions',

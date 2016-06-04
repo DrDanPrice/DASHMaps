@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Mapstyles } from '../collections/collects';
 import { Mongo }     from 'meteor/mongo';
+import { MapStyle } from './mapstyle_class';
 
 //create a temporary style here, to be shared by consumers
 //save or delete only after choice.
@@ -10,150 +11,7 @@ import { Mongo }     from 'meteor/mongo';
 //question of observables is whether local mongos do everything we need - the observables let you subscribe between components;
 //mongo, it seems, is subscribed between server and client; is enough?
 //if MapStyle works as it's own class, just move it over
-export class MapStyle {
-  //can have time, etc., at point at which it's new, and then can also put in stuff about being complete or not
-  //get scene settings from the returned object, .configsettings
-  //put in globals!  https://mapzen.com/documentation/tangram/global/
-  constructor() {
-    return {
-    "stylename" : "default",
-    "owner" : "Dan Price/DASH",
-    "attribution" : "Mapzen",
-    "creationdate" : "epoch of some sort",
-    "collectiontype" : "fullmap",
-    "configsettings" : {
-		  "scene": {
-		  	"background":{color:"white"},
-			"animated":false},
-		  "cameras": {
-            "camera1": {
-                "type": "perspective",
-                "vanishing_point": [
-                  -0.15,
-                  -0.75
-                ]
-            },
-            "camera2": {
-                "type": "isometric",
-                "axis": [0,1],
-                "active": true
-            }
-      },
-		  "lights": {
-		    "light1": {
-		      "type": "directional",
-		      "diffuse": 1,
-		      "ambient": 0.35
-		    }
-		  },
-		  "sources": {
-		    "osm": {
-		      "type": "TopoJSON",
-		      "url": "http://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-f7STaq0"
-			  }
-		  },
-		  "styles": {
-		    "buildings": {
-          "interactive": true,
-		      "base": "polygons",
-		      "shaders": {
-		        "uniforms": {
-		          "u_height": 0,
-		          "u_color_height": 0
-		        },
-		        "blocks": {
-		          "position": "position.z *= u_height;"
-		        }
-		      }
-		    }
-		  },
-		  "layers": {
-		    "earth": {
-          "interactive": true,
-		      "data": {
-                  "source": "osm"
-		      },
-		      "draw": {
-		        "polygons": {
-		          "order": 0,
-		          "color": "#edf4f0"
-		        }
-		      }
-		    },
-		    "landuse": {
-          "interactive": true,
-		      "data": {
-		        "source": "osm"
-		      },
-		      "draw": {
-		        "polygons": {
-		          "order": 1,
-		          "color": "#4db177"
-		        }
-		      }
-		    },
-		    "water": {
-          "interactive": true,
-		      "data": {
-                  "source": "osm"
-		      },
-		      "draw": {
-		        "polygons": {
-		          "order": 2,
-		          "color": "#3d8ca3"
-		        }
-		      }
-		    },
-		    "roads": {
-		      "data": {
-		        "source": "osm"
-		      },
-		      "properties": {
-		        "width": 3
-		      },
-		      "draw": {
-		        "lines": {
-		          "order": 3,
-		          "color": "#050505",
-		          "width": 3
-		        }
-		      }
-		    },
-		    "buildings": {
-		      "data": {
-		        "source": "osm"
-		      },
-  		      "draw": {
-  		        "lines": {
-  		          "order": 2,
-  		          "color": "red",
-  		          "width": 3
-  		        }
-  		      }
-  		  },
-        "default_data": {
-		      "data": {
-		        "source": "mongodb"
-		      },
-  		      "draw": {
-  		        "lines": {
-  		          "order": 2,
-  		          "color": "blue",
-  		          "width": 3
-  		        },
-              "polygons": {
-              "order": 12,
-              "color": "#FF00FF",
-                  "interactive": true
-              }
-  		      }
-  		  }
-		  }
-    	}
-	  }
-  }
-}
-  //this is to be newed in mapstyles, but potentially also in datadisplay -
+
 
 
 @Injectable()
@@ -167,22 +25,34 @@ export class MapStyleService{
   {
     //try in ngOnInit as well
   }
-
+  getMapSetting(mapsettingname){
+    let dbMapSetting = new Promise((resolve, reject) => {
+      let sub = Meteor.subscribe('mapstyles')
+      //Tracker.autorun(computation => {
+      this.zone.run(computation => { 
+        if (sub.ready()) {
+          computation.stop()
+          let setting = Mapstyles.findOne({ 'name':mapsettingname });
+          resolve(setting)
+        }
+      })
+    })
+  }
   getMapStyles() {
-		let dbDataProm =  new Promise((resolve, reject) => {
+		let dbMapStyleProm =  new Promise((resolve, reject) => {
 			let sub = Meteor.subscribe('mapstyles')
 			Tracker.autorun(computation => {
-		        if (sub.ready()) {
+		    if (sub.ready()) {
 					computation.stop() //not sure if necessary for sub?
-					let data = Mapstyles.find().fetch();
-		            resolve(data)
-		        }
+				let data = Mapstyles.find().fetch();
+		    resolve(data)
+		    }
 			})
 		});
-    return dbDataProm;
+    return dbMapStyleProm;
   }
   getMapStyleCursor() {
-    let dbDataCursor =  new Promise((resolve, reject) => {
+    let dbMapStyleCursor =  new Promise((resolve, reject) => {
       let sub = Meteor.subscribe('mapstyles')
       Tracker.autorun(computation => {
         if (sub.ready()) {
@@ -192,7 +62,7 @@ export class MapStyleService{
         }
     })
   });
-  return dbDataCursor;
+  return dbMapStyleCursor;
 }
 //mongodb doesn't save fields that begin with $, so have to clean to and from database
 public cleanMapSettings(oldSettings:string):any {
@@ -243,7 +113,7 @@ public addCustomLayers () {
 //then have one that is the added for the database that is being used
 public makeLayerSettings ():any {
   let tmpset = new MapStyle;
-  return tmpset.configsettings.layers['default_data'];
+  return tmpset.configsettings.layers['default'];
 }
 
 }
