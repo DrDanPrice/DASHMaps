@@ -6,10 +6,11 @@ export class MapStyle {
   constructor() {
     return {
     "stylename" : "default",
-    "owner" : "Dan Price/DASH",
-    "attribution" : "Mapzen",
+    "styleowner" : "DASH",
+    "styleattribution" : "Mapzen",
     "creationdate" : "epoch of some sort",
     "collectiontype" : "fullmap",
+    "styledescription" : "",
     "configsettings" : {
 		  "scene": {
 		  	"background":{color:"white"},

@@ -1,0 +1,21 @@
+
+<div style="position:absolute;top:0px;left:50%;width:50%;z-index:1000;background-color:white;">
+<h1>Scene Configuration</h1>
+  <div class="form-group" NgControlGroup="sceneCtrl">
+  </div>
+    <div class="btn btn-primary" (click)="updatescene()">Update scene</div>
+    <div class="btn btn-primary" (click)="undoscene()">Undo</div>
+
+    <label for="scenebckgrndconfig">Background-color</label>
+  	<input type="text" class="form-control"
+      id="scenebckgrndconfig" [(ngModel)]='scene.background.color'
+    />
+    <label for="sceneanimateconfig">Background-animated</label>
+  	<input type="text" class="form-control"
+      id="sceneanimateconfig" [(ngModel)]='scene.animated'
+    />
+
+
+{{scenelist | json}}
+
+</div>

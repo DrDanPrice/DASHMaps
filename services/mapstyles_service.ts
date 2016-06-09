@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { Mapstyles } from '../collections/collects';
 import { Mongo }     from 'meteor/mongo';
 import { MapStyle } from './mapstyle_class';
+import { MapSettings, ConfigSettings, LayerSettings } from '../objectmodels/mapsetting.ts';
 
 //create a temporary style here, to be shared by consumers
 //save or delete only after choice.
@@ -28,8 +29,8 @@ export class MapStyleService{
   getMapSetting(mapsettingname){
     let dbMapSetting = new Promise((resolve, reject) => {
       let sub = Meteor.subscribe('mapstyles')
-      //Tracker.autorun(computation => {
-      this.zone.run(computation => { 
+      Tracker.autorun(computation => {
+      //this.zone.run(computation => {
         if (sub.ready()) {
           computation.stop()
           let setting = Mapstyles.findOne({ 'name':mapsettingname });
@@ -87,6 +88,35 @@ public saveMapStyle(mapstyle:any):void{
 
 //perhaps it has to return a promise!!!!
 public getDefaultSettings () {
+  let mapst = new MapStyle;//to be replaced by whatever comes from upload or db
+  for (var toplevel in mapst.configsettings) {
+    console.log(toplevel)
+  }
+  let layerArray = {};
+  for (var layer in mapst.configsettings.layers) {
+    layerArray[layer] = new LayerSettings(mapst.configsettings.layers[layer])
+    //console.log(mapst.configsettings.layers[layer])
+  }
+  let config = new ConfigSettings(
+    'fadfs',
+    'fadsasdfdsd',
+    undefined,
+    layerArray
+  )
+  //[new LayerSettings(undefined,undefined),new LayerSettings('earth',undefined)])
+
+  let mapscene = new MapSettings(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    config
+  )
+  console.log('mapscene',mapscene)
+
   let defaultSettings = new Promise ((resolve, reject) => {
     let settings = new MapStyle;
     //let settings = this.makeDefaultSettings();

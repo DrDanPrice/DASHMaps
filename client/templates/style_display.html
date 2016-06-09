@@ -1,7 +1,46 @@
+
+<!-- https://webcake.co/object-properties-in-angular-2s-ngfor/ -->
 <div style="position:absolute;top:0px;left:50%;width:50%;z-index:1000;background-color:white;">
 <h1>StyleDisplay</h1>
-<form [ngFormModel]="configSetCtrl">
-  <div class="form-group" NgControlGroup="metadata">
+<form [ngFormModel]="configSetCtrl" (ngSubmit)="onSubmit()">
+  <!-- <button type="submit" [disabled]="!form.valid">Submit</button> -->
+  <button type="submit">Submit</button>
+  <button type="button" class="btn btn-secondary">
+   <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
+     <a href id="configsettings-dropdown" dropdownToggle>
+       <h1>Style Settings</h1>
+     </a>
+     <ul class="dropdown-menu" aria-labelledby="configsettings-dropdown">
+       <!-- <li>
+         <a class="dropdown-item" [routerLink]="['/styles/globals']">Globals</a>
+       </li> -->
+      <li>
+         <a class="dropdown-item" [routerLink]="['/styles/scene']">Scene</a>
+      </li>
+      <!-- <li>
+        <a class="dropdown-item" [routerLink]="['/styles/cameras']">Cameras</a>
+      </li>
+      <li>
+        <a class="dropdown-item" [routerLink]="['/styles/lights']">Lights</a>
+      </li>
+      <li>
+        <a class="dropdown-item" [routerLink]="['/styles/sources']">Sources</a>
+      </li>
+      <li>
+        <a class="dropdown-item" [routerLink]="['/styles/styles']">Styles</a>
+      </li>
+      <li>
+        <a class="dropdown-item" [routerLink]="['/styles/textures']">Textures</a>
+      </li>
+      <li>
+        <a class="dropdown-item" [routerLink]="['/styles/layers']">Layers</a>
+      </li> -->
+
+     </ul>
+   </span>
+ </button>
+ <router-outlet></router-outlet>
+  <div class="form-group" NgControlGroup="configCtrl">
   </div>
   <div class="btn btn-primary" (click)="saveMapstyle()">Save Mapstyle</div>
   <div class="btn btn-primary" (click)="removeMapstyle()">Delete Mapstyle</div>
@@ -15,30 +54,36 @@
   <select -->
 
   <label for="stylename">Mapstyle Name</label>
+  <!-- <input type="text" class="form-control"
+    id="stylename" [(ngModel)]='mapstyle.stylename'
+    /> -->
 	<input type="text" class="form-control"
     id="stylename"
     #msname [(value)]=mapstyle.stylename
     (keyup)='mapstyle.stylename=msname.value'
     (focus)='showInputs=true'/>
 
+    <label for="configsettings">ConfigSettings</label>
+  	<input type="text" class="form-control"
+      id="configsettings" [(ngModel)]='mapstyle.configsettings.scene.animated'
+      />
+
+
   <label for="styleowner">Mapstyle Owner</label>
 	<input type="text" class="form-control"
-    id="styleowner"
-    #msowner [(value)]=mapstyle.owner
-    (keyup)='mapstyle.owner=msowner.value'/>
+    id="styleowner" [(ngModel)]='mapstyle.styleowner'
+    />
+    <!--ngControl="styleowner", etc.-->
 
   <label for="styledescription">Mapstyle Description</label>
   <textarea type="textarea" cols="50" rows="4" class="form-control"
-    id="styledescription"
-    #msdescription [(value)]=mapstyle.description
-    (keyup)='mapstyle.description=msdescription.value'>
+    id="styledescription" [(ngModel)]='mapstyle.description'>
   </textarea>
 
   <label for="styleattribution">Mapstyle Attribution</label>
   <textarea cols="50" rows="2" class="form-control"
     id="styleattribution"
-    #msattribution [(value)]=mapstyle.attribution
-    (keyup)='mapstyle.attribution=msattribution.value'>
+    [(ngModel)]='mapstyle.attribution'>
   </textarea>
 </form>
 
@@ -48,7 +93,7 @@
 <p>
 Should have pull-down to choose different mapstyles_service
 (bootstrap dropdown?)
-have mapstyles and layerstyles separate - so when you add a style that doesn't have
+have mapstyles and layerstyles separate - so when you add a style that doesnot have
 any customslayers, it still works - for saving a custommapstyle, it would have both?
 </p>
 </div>
