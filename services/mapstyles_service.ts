@@ -88,10 +88,8 @@ public saveMapStyle(mapstyle:any):void{
 
 //perhaps it has to return a promise!!!!
 public getDefaultSettings () {
+  console.log('trying to get default')
   let mapst = new MapStyle;//to be replaced by whatever comes from upload or db
-  for (var toplevel in mapst.configsettings) {
-    console.log(toplevel)
-  }
   let layerArray = {};
   for (var layer in mapst.configsettings.layers) {
     layerArray[layer] = new LayerSettings(mapst.configsettings.layers[layer])

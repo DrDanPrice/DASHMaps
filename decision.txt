@@ -1,0 +1,21 @@
+decision - place of
+Plato - doesn't matter who says the truth as long as the true thing is said
+Aristotle - true thing doesn't have to be said in order for good to happen
+(phronesis/praxis, etc.; not always how he's been read)
+For Plato, that the place of decision is in the no-place of the ideal.
+For Kant, that the place of decision is in the no-place of the mind.
+
+For the political question - that the place about which we decide is, first,
+the place about which we have some evidence concerning what is true or false.
+Then, second, that we follow the right rules for generalizing concerning those
+truths.
+How do we know that a group of people counts as having the same evidence?
+The example in terms of PCA and knowing how many dimensions are needed to come to
+an agreement, instead of knowing what a particular function of judgment is
+about may be the better place to start.
+
+
+
+For forms - idea is to perhaps use "scene" logic to create an html that fills in
+a ControlGroup, then a control - so that different components can use the same
+html, with the list for the settings coming from the class definitions??

@@ -2,9 +2,16 @@
 <!-- https://webcake.co/object-properties-in-angular-2s-ngfor/ -->
 <div style="position:absolute;top:0px;left:50%;width:50%;z-index:1000;background-color:white;">
 <h1>StyleDisplay</h1>
+<!-- <form [ngFormModel]="form" (ngSubmit)="onSubmit()">
+   <p>
+        <label>First Name:</label>
+        <input type="text" ngControl="firstName">
+   </p>
+</form> -->
 <form [ngFormModel]="configSetCtrl" (ngSubmit)="onSubmit()">
+  <div class="form-group" NgControlGroup="configCtrl">
   <!-- <button type="submit" [disabled]="!form.valid">Submit</button> -->
-  <button type="submit">Submit</button>
+  <button type="submit" (click)="onSubmit()">Submit</button>
   <button type="button" class="btn btn-secondary">
    <span dropdown keyboardNav="true" (on-toggle)="toggled($event)">
      <a href id="configsettings-dropdown" dropdownToggle>
@@ -40,8 +47,8 @@
    </span>
  </button>
  <router-outlet></router-outlet>
-  <div class="form-group" NgControlGroup="configCtrl">
-  </div>
+
+
   <div class="btn btn-primary" (click)="saveMapstyle()">Save Mapstyle</div>
   <div class="btn btn-primary" (click)="removeMapstyle()">Delete Mapstyle</div>
   <br>
@@ -69,11 +76,14 @@
       />
 
 
-  <label for="styleowner">Mapstyle Owner</label>
-	<input type="text" class="form-control"
-    id="styleowner" [(ngModel)]='mapstyle.styleowner'
-    />
-    <!--ngControl="styleowner", etc.-->
+  <label for="styleownerID">Mapstyle Owner</label>
+  <input type="text" [(ngModel)]="mapstyle.styleowner"
+   />
+	<!-- <input type="text"
+    (ngModelChange)="mapstyle.styleowner = $event"
+    id="styleownerID" [(ngModel)]="mapstyle.styleowner"
+    ngControl="styleowner"
+    /> -->
 
   <label for="styledescription">Mapstyle Description</label>
   <textarea type="textarea" cols="50" rows="4" class="form-control"
@@ -85,6 +95,7 @@
     id="styleattribution"
     [(ngModel)]='mapstyle.attribution'>
   </textarea>
+  </div>
 </form>
 
 {{mapstyle | json}}

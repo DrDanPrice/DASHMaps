@@ -132,6 +132,8 @@ let geoJSONVersion = {"type": "Feature",
   }
   public detailDisplay(selection):void {
     console.log('selection in func', selection) //.feature.properties.AQSID)
+    let latlng:any = selection.leaflet_event.latlng
+    console.log(latlng)
     this.router.navigate(['/features', {title:'from tangrammaps.ts',properties:selection}]);
     //try with one of the ones with POIS.
     //could have it go to that AQSID, or to _id for all the features

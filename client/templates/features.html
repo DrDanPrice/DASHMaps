@@ -1,22 +1,30 @@
 <div style="position:absolute;top:0px;left:50%;width:50%;z-index:1000;background-color:white;">
-<linked></linked>
+
 <h1>{{title}}</h1>
 <p>{{properties.feature | json}}</p>
+<linked></linked>
 
 <p>Should have this route by featureid - with some tie in to questions
 Figure out how to get columns in Bootstrap4; show up on right side?
 Click displays, with id selecting that individual
 Two buttons - one for creating a feature; one for manage_features;
 search should already be in this version.
+
+perhaps: instead of new and manage, we can have it distinguish
+between things to do -
 </p>
 
 <div (click)="$event.preventDefault()">
   <div class="btn-group">
     <button type="button" class="btn btn-secondary">
-      <a [routerLink]="['/features/createfeature']">New</a>
+      <a [routerLink]="['/features/createfeature']"
+      title="new feature"
+      >New</a>
     </button>
     <button type="button" class="btn btn-secondary">
-      <a [routerLink]="['/features/managefeatures']">Manage</a>
+      <a [routerLink]="['/features/managefeatures']"
+      title="edit properties on this feature"
+      >Edit</a>
     </button>
     <!--if done as button instead of directive, have to think about html... -->
     <button type="button" class="btn btn-secondary">

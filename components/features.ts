@@ -39,6 +39,8 @@ export class FeatureComponent implements OnActivate {
     private router: Router, private curr: RouteSegment
   ){
     this.title = curr.getParam('title');
+    this.featureproperties = curr.getParam('properties')
+    console.log('feature props',this.featureproperties)
   }
 
   getAQMonitor (id):any {
@@ -78,15 +80,15 @@ export class FeatureComponent implements OnActivate {
 
   addPosition(latitude?:number,longitude?:number): void {
       this.latpositions.push(new Control(latitude)); //rework the Validators!!
-  this.lngpositions.push(new Control(longitude));
-  this.latcoordinates.updateValueAndValidity();
-  this.lngcoordinates.updateValueAndValidity();
+      this.lngpositions.push(new Control(longitude));
+      this.latcoordinates.updateValueAndValidity();
+      this.lngcoordinates.updateValueAndValidity();
   }
 addPoint2Positions(drawstate,latlng){
-      this.latpositions.push(new Control(latlng.lat));
-  this.lngpositions.push(new Control(latlng.lng));
-  this.latcoordinates.updateValueAndValidity();
-  this.lngcoordinates.updateValueAndValidity();
+    this.latpositions.push(new Control(latlng.lat));
+    this.lngpositions.push(new Control(latlng.lng));
+    this.latcoordinates.updateValueAndValidity();
+    this.lngcoordinates.updateValueAndValidity();
   //console.log(drawstate,latlng.lng,latlng.lat,this)
 }
   GeoJSONTypes: Array<string> = ["Point", "MultiPoint", "LineString", "MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection", "Feature", "FeatureCollection"];

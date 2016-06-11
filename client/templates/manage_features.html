@@ -1,2 +1,60 @@
-<h1>ManageFeatures</h1>
-<h1>ManageFeatures</h1><h1>ManageFeatures</h1><h1>ManageFeatures</h1><h1>ManageFeatures</h1>
+<div style="position:absolute;z-index:10000;
+top:5%;width:80%;height:80%;left-margin:20%;right-margin:20%;top-margin:20%;background-color:green">
+<div style="position:relative;top:0px;width:100%;background-color:orange
+height:5%">(drag div)
+<span style="float:right">close X</span>
+</div>
+<p>background-color toggles - draw straight on map is transparent;
+  draw on canvas has colors</p>
+  <br>
+  could have as dropdown, with a state selected
+  <button type="button" class="btn btn-secondary">
+    <a
+    title="attach feature as drawing on map"
+    >Draw on map</a>
+  </button>
+  <button type="button" class="btn btn-secondary">
+    <a
+    title="attach feature as point"
+    >Point on map</a>
+  </button>
+  <button type="button" class="btn btn-secondary">
+    <a
+    title="attach feature to an idea or theme"
+    >Attach to feature</a>
+  </button>
+
+
+  <!-- <span id="fullMapBar" [hidden]="!showFullMapBar"> -->
+  <span>
+		<div class="item" (click)="drawState('addmore')">
+			<img src="/images/addmore.svg"
+				class="ui mini image"
+				title="add more visual dimensions or nuance to the feature">
+		</div>
+		<div class="item">
+			<img src="/images/flag.svg" class="ui mini image" title="add a point to the drawing">
+		</div>
+		<div class="item">
+			<img src="/images/crosshairs.svg" class="ui mini image" title="add a point to the drawing">
+		</div>
+		<div class="item">
+			<img src="/images/line.svg" class="ui mini image" title="add a line to the drawing">
+		</div>
+		<div class="item">
+			<img src="/images/square.svg" class="ui mini image" title="add a square to the drawing">
+		</div>
+		<div class="item">
+			<img src="/images/cubic-bez.svg" class="ui mini image" title="add a point to the drawing">
+		</div>
+		<div class="item">
+			<img src="/images/quad-bez.svg" class="ui mini image" title="add a point to the drawing">
+		</div>
+	    <div class="item">
+			<img src="/images/down-chevrons.svg" class="ui mini image rotate180" (click)="toggleMapBar()" title="hide drawing options">
+		</div>
+	</span>
+
+idea would be to have the higher div also full screen?
+<span style="position:relative;float:right;top:100%">resize>></span>
+</div>
