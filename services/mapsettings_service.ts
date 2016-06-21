@@ -3,25 +3,25 @@
 //http://blog.angular-university.io/how-to-build-angular2-apps-using-rxjs-observable-data-services-pitfalls-to-avoid/
 //can this be made to work for multiple services?
 //doing for mapstyles, first
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from '@angular/core';
+import { Mapstyles } from '../collections/collects';
+import { Mongo }     from 'meteor/mongo';
 import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
 //import {List} from 'immutable'; //http://blog.scottlogic.com/2016/01/05/angular2-with-immutablejs.html
 //should do a ChangeDetectionStrategy of push?
 //separate this from the service so that it maintains direction of push and immutability
 import { BehaviorSubject } from "rxjs/Rx";
-import { MapStyleService } from './mapstyles_service';
 import { MapStyle } from './mapstyle_class';
 
 @Injectable()
-export class ObservableStore {
+export class MapSettingService {
     private _mapsetting: BehaviorSubject<Array<string>> = new BehaviorSubject([]);
-
-    constructor(private MapStyleService: MapStyleService) {
-        this.loadSetting();
-        this.loadCustomBlocks();
-        this.loadSelectedFeatures();
+    public mapsetting: Observable<Array<string>> = this._mapsetting.asObservable();
+    constructor() {
+      this.loadSetting();
     }
+
 
     loadSetting() {
         this.MapStyleService.getMapSetting('default')

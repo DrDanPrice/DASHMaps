@@ -18,11 +18,11 @@ export class ObservableStore {
     private _mapsetting: BehaviorSubject<Array<string>> = new BehaviorSubject([]);
 
     constructor(private MapStyleService: MapStyleService) {
-        this.loadSetting();
-        this.loadCustomBlocks();
-        this.loadSelectedFeatures();
+        // this.loadSetting();
+        // this.loadCustomBlocks();
+        // this.loadSelectedFeatures();
     }
-
+/*
     loadSetting() {
         this.MapStyleService.getMapSetting('default')
             .subscribe(
@@ -95,5 +95,5 @@ export class ObservableStore {
         return obs;
     }
 
-
+*/
 }

@@ -12,11 +12,11 @@ import { SceneComponent } from './scene.ts';
 
 @Component({
   selector: 'style-display',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  //changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [ FileUploadService, MapStyleService, ControlGroup ],
   directives: [ FORM_DIRECTIVES,
                 NgIf,
-                NgClass,
+                //NgClass,
                 DROPDOWN_DIRECTIVES,
                 ROUTER_DIRECTIVES ],
   templateUrl: 'client/templates/style_display.html'
@@ -37,7 +37,7 @@ import { SceneComponent } from './scene.ts';
 export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// extends MeteorComponent {
   test:string;
   //http://victorsavkin.com/post/110170125256/change-detection-in-angular-2
-  //constructor(@Inject(forwardRef(() => MapStyleService)) MapStyleService,
+//  constructor(@Inject(forwardRef(() => MapStyleService)) MapStyleService,
   constructor(@Inject(MapStyleService, FileUploadService)
     private MapStyleService: MapStyleService,
     private FileUploadService: FileUploadService,
@@ -45,8 +45,9 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
     //public form: ControlGroup
     //public configSetCtrl: ControlGroup,// = new ControlGroup({});
   ){
-    let mapstyle = new MapStyle; //needed to fill for html
+    let mapstyle = new MapStyle; //needed to fill for html; replaced by promise
     let configSetCtrl: ControlGroup = new ControlGroup({})
+  //  this.makeConfigSetting(mapstyle);
     //let configCtrl: ControlGroup = new ControlGroup({});
     // this.form.valueChanges
     //       .map((value) => {
@@ -64,7 +65,7 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
 
 
   routerOnActivate(curr: RouteSegment): void {
-    console.log('routerOnActivate getParam() in styledisplay',curr.getParam('mapID'))
+    console.log('routerOnActivate getParam() in styledisplay',curr.getParam())
     //this.test = curr.getParam('test');
     //this.mapstyle = curr.getParam('mapstyle');
     this.MapStyleService.getDefaultSettings().then(mapstyle => {
@@ -107,7 +108,7 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
 			styledescription
 		})
     this.configCtrl = configCtrl;
-    this.configSetCtrl.addControl('configCtrl',configCtrl);
+//    this.configSetCtrl.addControl('configCtrl',configCtrl);
     //this.configSetCtrl.controls['configCtrl'].controls['styleowner'].valueChanges
 /*    this.configSetCtrl.valueChanges
         .map((value) => {

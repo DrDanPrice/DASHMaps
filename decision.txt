@@ -14,8 +14,36 @@ The example in terms of PCA and knowing how many dimensions are needed to come t
 an agreement, instead of knowing what a particular function of judgment is
 about may be the better place to start.
 
-
+Idea is that this is a species of the problem with the idea that lots of simple
+things add up to be one complicated thing as it gets large enough.
+(And that the purpose of science is to be true to the simple things and the
+whole at the same time - which is why they want the laws to be unified
+representations of the possible acts of perception/simplicity)
 
 For forms - idea is to perhaps use "scene" logic to create an html that fills in
 a ControlGroup, then a control - so that different components can use the same
 html, with the list for the settings coming from the class definitions??
+
+Why the ways in which the decision about risk on a particular day works
+are interesting - the answer comes in situating yourself in a channel, or
+along a contour, as opposed to within a particular change of street.
+
+
+Some possibilities for representing the question:
+1 - How many dimensions do you feel are important, and how would you label them?
+2 - How do they develop over time?
+3 - How do they combine over time?
+
+For example:
+65 y.o. AA breast cancer survivor:
+a) no evidence that air pollution ups chance of inception of asthma
+b) if "no history of asthma", then different way of representing PM vs. Ozone
+risks (i.e., if there is a history of heart disease)
+c) all the things about self-efficacy and barriers
+d) continuing and having a representation of "being on the right track"
+
+
+Difference between pdq and eigenvector representation...
+The pdq is still a representation of causes - i.e., the "web of causation" -
+whereas the eigenvector representation is a field of tendencies / densities
+(i.e., the tensor representation)

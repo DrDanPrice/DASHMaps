@@ -1,3 +1,7 @@
+// import 'es6-shim/es6-shim';
+import 'reflect-metadata';
+//import 'zone.js';
+//import 'zone.js/dist/zone';
 import { provide, NgZone } from '@angular/core';
 import { bootstrap } from 'angular2-meteor-auto-bootstrap';
 

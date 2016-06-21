@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import {Mapstyles, Collects, Monitors, Features, Grids} from '../collections/collects';
 
 import '../services/methods';

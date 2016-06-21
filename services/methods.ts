@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import {Mapstyles, Monitors, Features} from '../collections/collects.ts';
 
 function getContactEmail(user: Meteor.User): string {

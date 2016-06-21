@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { Injectable, NgZone } from '@angular/core';
 import { Monitors } from '../collections/collects';
 import { Mongo }     from 'meteor/mongo';

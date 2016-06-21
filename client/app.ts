@@ -1,4 +1,5 @@
-import 'reflect-metadata';
+// import 'reflect-metadata';
+// import 'zone.js/dist/zone';
 import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../node_modules/ng2-bootstrap';
 //https://github.com/valor-software/ng2-bootstrap/tree/development/demo
 import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
