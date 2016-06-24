@@ -1,6 +1,6 @@
 //import { RequireUser } from 'angular2-meteor-accounts-ui';
 import { Component, OnInit, AfterViewInit, ChangeDetectionStrategy, NgZone, Inject, Injectable } from '@angular/core';
-import { FORM_DIRECTIVES, NgForm, Control, ControlGroup, ControlArray, Validators, NgIf, NgFor, NgClass } from '@angular/common';
+import { FORM_DIRECTIVES, FORM_PROVIDERS, NgForm, Control, ControlGroup, ControlArray, Validators, NgIf, NgFor, NgClass } from '@angular/common';
 import { OnActivate, Routes, Router, RouteSegment, ROUTER_DIRECTIVES } from '@angular/router';
 import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../node_modules/ng2-bootstrap';
 import { MeteorComponent } from 'angular2-meteor';
@@ -13,24 +13,25 @@ import { SceneComponent } from './scene.ts';
 @Component({
   selector: 'style-display',
   //changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ FileUploadService, MapStyleService, ControlGroup ],
+  providers: [ FileUploadService, MapStyleService, FORM_PROVIDERS],//, ControlGroup ],
   directives: [ FORM_DIRECTIVES,
                 NgIf,
                 //NgClass,
                 DROPDOWN_DIRECTIVES,
-                ROUTER_DIRECTIVES ],
+                ROUTER_DIRECTIVES
+              ],
   templateUrl: 'client/templates/style_display.html'
 })
 @Routes([
-    { path: '/scene', component: SceneComponent }//,
-    //{ path: '/globals', component: GlobalsComponent },
-    // { path: '/cameras', component: CameraComponent },
-    // { path: '/lights', component: LightsComponent },
-    // { path: '/sources', component: SourcesComponent },
-    // { path: '/styles', component: StylesComponent },
-    // { path: '/textures', component: TexturesComponent },
-    // { path: '/layers', component: LayersComponent }
-])
+     { path: '/scene', component: SceneComponent }//,
+//     //{ path: '/globals', component: GlobalsComponent },
+//     // { path: '/cameras', component: CameraComponent },
+//     // { path: '/lights', component: LightsComponent },
+//     // { path: '/sources', component: SourcesComponent },
+//     // { path: '/styles', component: StylesComponent },
+//     // { path: '/textures', component: TexturesComponent },
+//     // { path: '/layers', component: LayersComponent }
+ ])
 
 //@RequireUser()
 @Injectable()
@@ -41,13 +42,14 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
   constructor(@Inject(MapStyleService, FileUploadService)
     private MapStyleService: MapStyleService,
     private FileUploadService: FileUploadService,
-    private router: Router
+    private router: Router,
+    //public ControlGroup: ControlGroup
     //public form: ControlGroup
     //public configSetCtrl: ControlGroup,// = new ControlGroup({});
   ){
     let mapstyle = new MapStyle; //needed to fill for html; replaced by promise
     let configSetCtrl: ControlGroup = new ControlGroup({})
-  //  this.makeConfigSetting(mapstyle);
+    this.makeConfigSetting(mapstyle);
     //let configCtrl: ControlGroup = new ControlGroup({});
     // this.form.valueChanges
     //       .map((value) => {
@@ -71,7 +73,7 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
     this.MapStyleService.getDefaultSettings().then(mapstyle => {
       // this.makeConfigSetting(mapstyle);
       this.mapstyle = mapstyle; //have to load it into the control to show up
-      this.makeConfigSetting(mapstyle);
+//      this.makeConfigSetting(mapstyle);
       // console.log('mapstyle delivered',this.configSetCtrl.controls['configCtrl'].controls['styleowner'])
       // this.configSetCtrl.controls['configCtrl'].controls['styleowner'].updateValue(mapstyle['styleowner']);
       //could walk the json and try to set each individually??
@@ -86,7 +88,7 @@ export class StyleComponent implements OnActivate, OnInit, AfterViewInit {// ext
   //     this.mapstyle = mapstyle;
   //   });
   // }
-  //configSetCtrl = new ControlGroup({});
+  configSetCtrl = new ControlGroup({});
 	makeConfigSetting(config){
 		let stylename: Control = new Control(config.stylename, Validators.compose([ Validators.required, DASHValidator.isValidTxt ]));
     let styleowner: Control = new Control(config.styleowner, Validators.compose([ Validators.required, DASHValidator.isValidTxt ]));
