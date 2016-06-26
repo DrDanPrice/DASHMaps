@@ -8,9 +8,12 @@ import { bootstrap } from 'angular2-meteor-auto-bootstrap';
 import { LocationStrategy, PathLocationStrategy, APP_BASE_HREF } from '@angular/common';
 import { DASHMaps } from './app.ts';
 import { ROUTER_PROVIDERS } from '@angular/router';
+//import { APP_ROUTER_PROVIDERS } from ''./app.ts'
 
 bootstrap(DASHMaps, [
   ROUTER_PROVIDERS,
+  //APP_ROUTER_PROVIDERS,
   provide(APP_BASE_HREF, {useValue: '/'}),
   provide(LocationStrategy, { useClass: PathLocationStrategy })
-]);
+])
+.catch(err => console.error(err));

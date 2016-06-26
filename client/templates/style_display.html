@@ -8,9 +8,10 @@
         <input type="text" ngControl="firstName">
    </p>
 </form> -->
-<!-- <form [ngFormModel]="configSetCtrl" (ngSubmit)="onSubmit()"> -->
-<form (ngSubmit)="onSubmit()">
-  <div class="form-group" NgControlGroup="configCtrl">
+<form [ngFormModel]="configSetCtrl" (ngSubmit)="onSubmit()">
+<!-- <form (ngSubmit)="onSubmit()"> -->
+  <div class="form-group">
+  <!-- <div class="form-group" NgControlGroup="configCtrl"> -->
   <!-- <button type="submit" [disabled]="!form.valid">Submit</button> -->
   <button type="submit" (click)="onSubmit()">Submit</button>
   <button type="button" class="btn btn-secondary">

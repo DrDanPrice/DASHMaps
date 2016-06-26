@@ -28,6 +28,8 @@ export class TangramMaps implements OnInit {
   public tmap:any;
   public scene:any;
   public aqmonitors:any;
+  @Input() mapstylename:string = 'default';
+  @Input() datasets:Array<string>;
 
   constructor (@Inject(AQMonitorsService) @Inject(MapStyleService)
     private AQMonitorsService: AQMonitorsService,
@@ -86,8 +88,17 @@ let geoJSONVersion = {"type": "Feature",
     return featGeoJSON
   }
   getSettings () {
-    this.MapStyleService.getDefaultSettings().then(mapsettings => {
-      this.addTangram(mapsettings.configsettings);
+    // this.MapStyleService.getDefaultSettings().then(mapsettings => {
+    //   //this.addTangram(mapsettings.configsettings);
+    // });
+    console.log('the localname',this.mapstylename)
+    this.MapStyleService.getWorkingMapSetting('default').then(mapsets => {
+      if(mapsets==true){
+        let mapsettings = this.MapStyleService.workingMapSetting.findOne();
+        this.addTangram(mapsettings.mapstyle.settings);
+      }else{
+        console.log('some sort of error in collection for mapstyle')
+      }
     });
   }
   ngOnInit() {

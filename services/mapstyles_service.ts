@@ -33,11 +33,25 @@ export class MapStyleService{
       //this.zone.run(computation => {
         if (sub.ready()) {
           computation.stop()
-          let setting = Mapstyles.findOne({ 'name':mapsettingname });
+          let setting = Mapstyles.findOne({ 'mapstyle.name':mapsettingname });
           resolve(setting)
         }
       })
     })
+    return dbMapSetting;
+  }
+
+  workingMapSetting = new Mongo.Collection(null);
+
+  getWorkingMapSetting(mapsettingname){
+    let localMapSetting = new Promise((resolve, reject)=>{
+      let mapset = this.getMapSetting(mapsettingname);
+      mapset.then(mapsetting => {
+        this.workingMapSetting.insert(mapsetting);
+        resolve(true);
+      });
+    })
+    return localMapSetting;
   }
   getMapStyles() {
 		let dbMapStyleProm =  new Promise((resolve, reject) => {
@@ -52,6 +66,7 @@ export class MapStyleService{
 		});
     return dbMapStyleProm;
   }
+  //cursor for pull-down to select
   getMapStyleCursor() {
     let dbMapStyleCursor =  new Promise((resolve, reject) => {
       let sub = Meteor.subscribe('mapstyles')

@@ -3,6 +3,7 @@
 //http://blog.angular-university.io/how-to-build-angular2-apps-using-rxjs-observable-data-services-pitfalls-to-avoid/
 //can this be made to work for multiple services?
 //doing for mapstyles, first
+import 'reflect-metadata';
 import { Injectable, NgZone } from '@angular/core';
 import { Mapstyles } from '../collections/collects';
 import { Mongo }     from 'meteor/mongo';

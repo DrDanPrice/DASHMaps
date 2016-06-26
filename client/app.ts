@@ -59,13 +59,16 @@ constructor(private router: Router) {
   //constructor() {
     super();
     console.log('the @InjectUser gives you Meteor.User here',this.user);
+    //console.log(params.get('localmapstylename'))
   }
 
   onSelect() {
     console.log('wetf')
-    this.router.navigate(['/data']);
+//    this.router.navigate(['/data']);
     //this.router.navigate(['/hero', hero.id]);
   }
+  public localmapstylename:string = 'default';
+  public localdatasets:Array<string> = ['AQmonitors','Users'];
 
   public disabled:boolean = false;
   public status:{isopen:boolean} = {isopen: false};
