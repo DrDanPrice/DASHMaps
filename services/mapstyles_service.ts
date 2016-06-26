@@ -43,6 +43,17 @@ export class MapStyleService{
 
   workingMapSetting = new Mongo.Collection(null);
 
+  setWorkingMapSetting(mapsettingname){
+    let localMapSetting = new Promise((resolve, reject)=>{
+      let mapset = this.getMapSetting(mapsettingname);
+      mapset.then(mapsetting => {
+        this.workingMapSetting.insert(mapsetting);
+        resolve(true);
+      });
+    })
+    return localMapSetting;
+  }
+
   getWorkingMapSetting(mapsettingname){
     let localMapSetting = new Promise((resolve, reject)=>{
       let mapset = this.getMapSetting(mapsettingname);

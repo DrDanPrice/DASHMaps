@@ -1,5 +1,5 @@
-import 'reflect-metadata';
-import 'zone.js/dist/zone';
+// import 'reflect-metadata';
+// import 'zone.js/dist/zone';
 import { Ng2BootstrapConfig, Ng2BootstrapTheme, DROPDOWN_DIRECTIVES } from '../node_modules/ng2-bootstrap';
 //https://github.com/valor-software/ng2-bootstrap/tree/development/demo
 import { Component, OnInit, ChangeDetectionStrategy, NgZone } from '@angular/core';
@@ -50,6 +50,7 @@ import { LinkedComponent } from '../components/linked.ts';
     { path: '/features', component: FeatureComponent }
     //{ path: '/features/:featureID', component: FeatureComponent } // I don't think it needs this, but haven't tested
 ])
+
 @InjectUser()
 export class DASHMaps extends MeteorComponent implements OnInit {
   user: Meteor.User;

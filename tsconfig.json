@@ -18,6 +18,7 @@
     "**/*.ts"
   ],
   "files": [
+    "client/app.routes.ts",
     "client/app.ts",
     "client/main.ts",
     "collections/collects.ts",

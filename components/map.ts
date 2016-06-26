@@ -17,8 +17,15 @@ export class MapComponent implements OnActivate{
   //  super()
   }
   routerOnActivate(curr: RouteSegment): void {
-    console.log('routerOnActivate getParam() in map',curr.getParam('localmapstylename'))
-    this.getMapSettings()
+    let stylename:string = curr.getParam('localmapstylename');
+    console.log(stylename)
+    // let stylename = curr.getParam('localmapstylename');
+    //
+    //
+    //if (stylename==undefined){stylename='default';console.log('adfsdfs')}
+    //this.MapStyleService.setWorkingMapSetting(stylename);
+    //console.log('routerOnActivate getParam() in map',curr.getParam('localmapstylename'))
+    //this.getMapSettings()
     //this should write out to the service, which should determine the mapstyles to show
     //should treat getParam as a promise?
   }
