@@ -31,7 +31,7 @@ ejson@1.0.12
 email@1.0.14_1
 es5-shim@4.5.12_1
 fastclick@1.0.12
-fourseven:scss@3.4.3
+fourseven:scss@3.8.0_1
 geojson-utils@1.0.9
 hot-code-push@1.0.4
 html-tools@1.0.10
@@ -54,7 +54,7 @@ modules@0.6.4
 modules-runtime@0.6.4_1
 mongo@1.1.9_1
 mongo-id@1.0.5
-npm-bcrypt@0.8.6_1
+npm-bcrypt@0.8.7
 npm-mongo@1.4.44_1
 observe-sequence@1.0.12
 ordered-dict@1.0.8
